@@ -1,0 +1,962 @@
+<?php
+   defined('BASEPATH') OR exit('No direct script access allowed');
+   ?><!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta links-->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+      <meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+      <meta name="author" content="Skill-Lync">
+      <meta name="robot" content="index, follow">
+      <!-- Title -->
+      <title>Lead - Home </title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/select2.min.css">
+      <link rel="stylesheet" href="css/ionicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/fullcalendar.min.css" rel="stylesheet">
+      <link href="css/quill.snow.css" rel="stylesheet">
+      <link href="css/spectrum.css" rel="stylesheet">
+      <!-- DashForge CSS -->
+      <link rel="stylesheet" href="css/dashforge.css">
+      <link rel="stylesheet" href="css/sales_crm.css">
+      <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+      <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-header navbar-expand-lg d-none-lg justify-content-between bg-gray-100 ">
+            <div class="navbar-brand">
+               <a class=""><img src="images/crm/footer_logo.png" class="wd-auto ht-20" id="" alt="logo"></a>
+            </div>
+            <!-- navbar-brand -->
+            <div  class="navbar-menu-wrapper justify-content-end pd-r-0" id="navbar-content">
+               <div class="nav navbar-menu bd-r hide-nav" id="navbar-menu">
+                  <div class="nav-item with-sub sub-menu">
+                     <a class="nav-link drop-icon" href="#" role="button"> Dashboard</a>
+                     <div class="navbar-menu-sub sub-drop" >
+                        <div class="nav-sub-item d-flex justify-content-between align-items-center " >
+                           <a href="#" class="nav-sub-link mg-r-10" id="admin">Administrator Dashboard</a>
+                           <div class="d-flex">
+                              <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+                              <a href="#" class="tx-dark"><i class="fa fa-check-circle"></i></a>
+                           </div>
+                        </div>
+                        <div class="mg-b-0 pd-l-5-f pd-10 tx-gray-700 tx-12">MY DASHBOARDS</div>
+                        <div class="nav-sub-item d-flex justify-content-between align-items-center">
+                           <a href="#" class="nav-sub-link" id="admin">Custom sales activity</a>
+                           <div class="d-flex">
+                              <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+                              <a><i class="fa fa-trash-o"></i></a>
+                           </div>
+                        </div>
+                        <div class="nav-sub-item">
+                           <a  href="#" class="nav-sub-link" ><i class="fa fa-plus mg-r-5"></i> Create New Dashboard</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon" >Content</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Library</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Images &#38; Documents</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Marketing</a>
+                     <div class="navbar-menu-sub  sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Campaigns</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Landing Pages</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Website Widgets</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Leads</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Smart Views</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Leads</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Activities</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Tasks</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Lists</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Workflow</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Automation</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Forms</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Process Designer</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Apps</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Dashlet Builder</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Lead Marketplaces</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Adwords Data Sync</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Facebook Retargeting</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Templates</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Reports</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Kaleyra SMS Template</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">SMS Templates</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Reports</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+                     </div>
+                     <!-- nav-sub -->
+                  </div>
+               </div>
+            </div>
+            <div class="navbar-right justify-content-end">
+               <div class="dropdown dropdown-profile mg-r-10 nav-right-menu">
+                  <a href="" class="dropdown-link nav-right-icon" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/search.png" class="wd-20 ht-20" alt="search">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right pd-15-f nav-right-drop">
+                     <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search Leads" aria-label="button-search-lead" aria-describedby="button-search-lead">
+                        <div class="input-group-append">
+                           <button class="btn btn-light" type="button" id="button-search-lead"><i class="fa fa-search"></i></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="dropdown dropdown-profile mg-r-10 ">
+                  <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/question.png" class="wd-20 ht-20" alt="question_Mark">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right pd-15-f">
+                     <a href="#" class="dropdown-item nav-right-item">Manage Apps</a>
+                     <a href="#" class="dropdown-item nav-right-item">Apps Marketplace</a>
+                     <a href="#" class="dropdown-item nav-right-item">Connect My Inbox</a>
+                  </div>
+               </div>
+               <div class="dropdown dropdown-profile">
+                  <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/user.svg" class="img-fluid ht-25" alt="user">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right tx-13 pd-15-f">
+                     <a href="#" class="dropdown-item nav-right-item">Sarang V</a>
+                     <a href="#" class="dropdown-item tx-11 nav-right-item">sarang@skill-lync.com</a>
+                     <a href="#" class="dropdown-item nav-right-item">Skill Lync</a>
+                     <div class="dropdown-divider"></div>
+                     <a  class="dropdown-item nav-right-item"><i class="fa fa-cogs mg-r-10"></i>Settings</a>
+                     <a href="#" class="dropdown-item nav-right-item"><i class="fa fa-user-plus mg-r-10"></i>Manage Users</a>
+                     <a href="#" class="dropdown-item nav-right-item"><i class="fa  fa-power-off mg-r-10"></i>Signout</a>
+                  </div>
+               </div>
+               <!-- <div class="side-nav-btn"> -->
+               <!-- <i class="fa fa-bars"></i> -->
+               <!-- </div> -->
+            </div>
+            <!-- navbar-right -->
+         </nav>
+         <!-- navbar -->
+      </header>
+      <!-- Navbar Header-->
+      <div class="container-fluid sal_crm_bg">
+         <div class="row">
+            <div class="col-md-9 col-sm-9 pd-10">
+               <div class="lead_details_container pd-10">
+                  <table id="leads_details" class="table">
+                     <thead>
+                        <tr>
+                           <th class="wd-10p">Lead No</th>
+                           <th class="wd-15p">Lead Name</th>
+                           <th class="wd-20p">Lead Email</th>
+                           <th class="wd-5p">Stage</th>
+                           <th class="wd-10p">Followup</th>
+                           <th class="wd-15p">Agent</th>
+                           <th class="wd-15p">Last Lead Activity</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>327612</td>
+                           <td>sathish kumar</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							  <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+                        <tr>
+                           <td>327613</td>
+                           <td>Saravana kumar</td>
+                           <td>supremesaravana@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+                        <tr>
+                           <td>327614</td>
+                           <td>Cathe</td>
+                           <td>cathe@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>23 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+                        <tr>
+                           <td>327612</td>
+                           <td>Lesslie Alexander</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+                        <tr>
+                           <td>327634</td>
+                           <td>Lesslie Alexander</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+						 <tr>
+                           <td>327634</td>
+                           <td>Lesslie Alexander</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+						 <tr>
+                           <td>527636</td>
+                           <td>Lesslie Alexander</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+						 <tr>
+                           <td>927625</td>
+                           <td>Lesslie Alexander</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>25 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+						 <tr>
+                           <td>327900</td>
+                           <td>Lesslie Alexander</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+						 <tr>
+                           <td>333634</td>
+                           <td>Lesslie Alexander</td>
+                           <td>lesslie.alexander@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Feb, 13:00 hrs</td>
+                           <td>Subramanya Samynathan</td>
+                           <td>Sent Email</td>
+                        </tr>
+						 <tr>
+                           <td>387684</td>
+                           <td>Ferndas Alexander</td>
+                           <td>ferndas@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>22 Mar, 14:00 hrs</td>
+                           <td>Subramanya </td>
+                           <td>Sent Email</td>
+                        </tr>
+						 <tr>
+                           <td>827310</td>
+                           <td>Edison</td>
+                           <td>edison.s@example.com</td>
+                           <td>
+                              <span class="status_type_value opportunity">Oppurtinity</span>
+                              <div class="status_change">
+							   <div class="arrow-up"></div>
+                                 <div class="group">
+                                    <label class="stage_title">Choose Stage</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li>
+                                       <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li>
+                                       <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li>
+                                       <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li>
+                                       <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li>
+                                       <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li>
+                                       <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li>
+                                       <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li>
+                                    </ul>
+                                    <label class="stage_title">Choose Type</label>
+                                    <ul class="radio_btn">
+                                       <li><input type="radio" id="typ1" value="assigned" name="type" /><label for="typ1">Assigned</label></li>
+                                       <li><input type="radio" id="typ2" value="unassigned" name="type"/><label for="typ2">Unassigned</label></li>
+                                    </ul>
+                                    <div class="row stage_date">
+                                       <div class="col-6">
+                                          <input type="text" id="dateFrom" class="form-control" placeholder="From">
+                                       </div>
+                                       <div class="col-6">
+                                          <input type="text" id="dateTo" class="form-control" placeholder="To">
+                                       </div>
+                                    </div>
+                                    <div class="status_btn">
+                                       <a href="javascript:void(0)" class="status_remove">Remove</a>
+                                       <a href="javascript:void(0)" class="status_apply">Apply</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                           <td>12 Feb, 13:00 hrs</td>
+                           <td>Samynathan</td>
+                           <td>No Email sent</td>
+                        </tr>
+                        
+                     </tbody>
+                  </table>
+               </div>
+               <!-- df-example -->
+            </div>
+            <div class="col-md-3 col-sm-3 bg_white right_conainer">
+               <div class="row pd-y-10">
+                  <div class="col-6 d-flex align-items-center">
+                     <h5 class="mg-b-0">Performance</h5>
+                  </div>
+                  <div class="col-6">
+                     <select class="custom-select">
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Yearly</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="card bg_gradient">
+                  <div class="card-body pd-10">
+                     <div class="d-flex justify-content-between">
+                        <h5 class="d-flex align-items-center tx-white mg-b-0 tx-14">Total Revenue</h5>
+                        <span class="tx-right tx-white tx-12">#Team Ranking</span>
+                     </div>
+                     <div class="d-flex justify-content-between">
+                        <h3 class="d-flex align-items-center tx-white mg-b-0 tx-22-f">INR 16,50,000</h3>
+                        <div class="bd bd-success tx-right-f pd-x-10-f d-flex align-items-center justify-content-end tx-12-f team_ranking wd-70">1</div>
+                     </div>
+                     <h6 class="tx-white pd-y-10"><span class="tx-success"><i class="fa fa-caret-up tx-success mg-r-7"></i>+10.00%</span> since last month</h6>
+                     <div class="progress mg-b-10 ht-7">
+                        <div class="progress-bar bg-success wd-100p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                     <h6 class="tx-white tx-right mg-b-0"><span class="tx-success">120% </span>of Target: INR 24,00,000</h6>
+                  </div>
+               </div>
+               <div class="tx-right mg-y-10">
+                  <span class="tx-12">#Team Ranking</span>
+               </div>
+               <div class="row pd-y-5">
+                  <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Calls Attempted</div>
+                  <div class="col-4 d-flex align-items-center justify-content-end txt_14">481 calls</div>
+                  <div class="col-3">
+                     <div class="bd tx-right pd-3 status_green tx-12-f">54</div>
+                  </div>
+               </div>
+               <div class="row pd-y-5">
+                  <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Outgoing calls</div>
+                  <div class="col-4 d-flex align-items-center justify-content-end txt_14">1228 mins</div>
+                  <div class="col-3">
+                     <div class="bd tx-right pd-3 status_green tx-12-f">54</div>
+                  </div>
+               </div>
+               <div class="row pd-y-5">
+                  <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Total Opportunity</div>
+                  <div class="col-4 d-flex align-items-center justify-content-end txt_14 tx-nowrap">INR 35,00,000</div>
+                  <div class="col-3">
+                     <div class="bd tx-right pd-3 status_red  tx-12-f">900</div>
+                  </div>
+               </div>
+               <div class="row pd-y-5">
+                  <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Sales Plan Created for</div>
+                  <div class="col-4 d-flex align-items-center justify-content-end txt_14">INR 24,00,000</div>
+                  <div class="col-3">
+                     <div class="bd tx-right pd-3 status_green tx-12-f">64</div>
+                  </div>
+               </div>
+               <hr>
+               <!--<div>
+                  <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-whatsapp mg-r-10"></i>Open Whatsapp <span class="tx-10">in a new tab </span></button>
+                  <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-envelope-o mg-r-10"></i>Send Email</button>
+                  <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-cube mg-r-10"></i>Schedule a Demo</button>
+                  </div> -->
+               <div>
+                  <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-th mg-r-10" aria-hidden="true"></i>My Autodial List</button>
+                  <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-envelope-square mg-r-10" aria-hidden="true"></i>My Mail Templates</button>
+               </div>
+               <div>
+                  <button class="btn blue_btn bg_green tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-phone mg-r-10" aria-hidden="true"></i>Start Auto Dial</button>
+                  <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16" data-toggle="modal" data-target="#autodial_setting"><i class="fa fa-cog mg-r-10" aria-hidden="true"></i>Auto Dial Settings</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer style="display:none !important">
+         <div class="container-fluid bg-dark fixed-bottom">
+            <div class="row row-xs">
+               <div class="col-md-12 pd-15">
+                  <ul class=" customer-li pd-l-0 mg-b-0 tx-10" >
+                     <li class="d-inline" >
+                        <a href="#" class="tx-white footer-a" id="">&#169; 2021 Skill Lync Inc. All Rights Reserved</a>
+                     </li>
+                     <li class="d-inline"><a href="#" class="footer-a">Help</a></li>
+                     <li class="d-inline"><a href="#" class="footer-a">Terms of Service</a></li>
+                     <li class="d-inline"><a href="#" class="footer-a">Privacy Policy</a></li>
+                     <li class="d-inline"><a href="#" class="footer-a">Acceptable Use</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!-- JS -->
+      </footer>
+      <div class="modal fade select-modal-parent show" id="autodial_setting" tabindex="-1" role="dialog" aria-labelledby="autodial_setting" >
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h4 class="modal-title" id="lead_details_box_edittitle">Auto Dial Settings</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <form  class="was-validated">
+                     <div class="form-group wd-100p">
+                        <label>Failed Calls Followup in hours<span class="tx-danger">*</span></label>
+                        <input type="number" class="form-control" name="failedcall_followup" required="">
+                     </div>
+                     <div class="form-group wd-100p">
+                        <label>Busy Calls followup in Hours<span class="tx-danger">*</span></label>
+                        <input type="number" class="form-control" name="busycall_followup" required="">
+                     </div>
+                     <div class="form-group wd-100p">
+                        <label>DNP Calls followup in hours<span class="tx-danger">*</span></label>
+                        <input type="number" class="form-control" name="busycall_followup" required="">
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error Message.</div>
+                     </div>
+                     <hr>
+                     <h4 class="model-title">
+                     DNP Settings</h6>
+                     <div class="form-group wd-100p">
+                        <label>Additional Stages<span class="tx-danger">*</span></label>
+                        <select class="form-control">
+                           <option>24</option>
+                           <option>12</option>
+                           <option>6</option>
+                           <option>3</option>
+                        </select>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="form-group wd-100p">
+                              <label>No. of DNP Calls<span class="tx-danger">*</span></label>
+                              <select class="form-control">
+                                 <option>24</option>
+                                 <option>12</option>
+                                 <option>6</option>
+                                 <option>3</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="form-group wd-100p">
+                              <label>Stage<span class="tx-danger">*</span></label>
+                              <select class="form-control">
+                                 <option>Cold</option>
+                                 <option>Hot</option>
+                                 <option>warm</option>
+                                 <option>raining</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="modal-footer bg-light">
+                  <button type="button" class="btn btn-white btn-xs rounded-0" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn bg_green btn-xs rounded-0"><i class="fa fa-floppy-o pd-r-10" aria-hidden="true"></i> Submit</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script src="js/feather.min.js"></script>
+      <script src="js/quill.js"></script>
+      <script src="js/typeahead.jquery.min.js"></script>
+      <script src="js/spectrum.js"></script>
+      <script src="js/dashforge.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.steps.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script src="js/responsive.dataTables.min.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script>
+         feather.replace();
+          $(function(){
+         
+         $('#leads_details').dataTable( {
+         language: {
+         searchPlaceholder: "Search Name, Email, Phone, Assignee"
+         }
+         });
+         
+         
+         
+         });
+         
+         
+         $(function() {
+         
+         $("body").delegate("#dateFrom, #dateTo " , "focusin", function(){
+         	var dateFormat = 'mm/dd/yy',
+         from = $('#dateFrom')
+         .datepicker({
+         defaultDate: '+1w' 
+         })
+         .on('change', function() {
+         to.datepicker('option','minDate', getDate( this ) );
+         }),
+         to = $('#dateTo').datepicker({
+         defaultDate: '+1w' 
+         })
+         .on('change', function() {
+         from.datepicker('option','maxDate', getDate( this ) );
+         });
+         
+         function getDate( element ) {
+         var date;
+         
+         try {
+         date = $.datepicker.parseDate( dateFormat, element.value );
+         
+         } catch( error ) {
+         date = null;
+         }
+         
+         return date;
+         }
+         });
+         
+         $(".status_type_value").click(function(){
+			$(".status_type_value").removeClass("show_stage");
+			$(this).parent().next().find(".status_change").add(this).addClass("show_stage");	
+         });
+		  <!-- $(document).on("click", function(e) { -->
+			<!-- if ($(e.target).is(".status_type_value") === false) { -->
+			  <!-- $(".status_type_value").removeClass("show_stage"); -->
+			<!-- } -->
+			<!-- }); -->
+			
+			
+         });
+      </script>
+   </body>
+</html>

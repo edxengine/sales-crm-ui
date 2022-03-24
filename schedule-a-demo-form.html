@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta links-->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+	<meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+	<meta name="author" content="Skill-Lync">
+	<meta name="robot" content="index, follow">
+	<!-- Title -->
+	<title>Lead - Home </title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/schedule_demo.css">
+	<link rel="stylesheet" href="css/select2.min.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="css/fullcalendar.min.css" rel="stylesheet">
+	<link href="css/quill.snow.css" rel="stylesheet">
+	<link href="css/spectrum.css" rel="stylesheet">
+	<!-- DashForge CSS -->
+	<link rel="stylesheet" href="css/dashforge.css">
+	<link rel="stylesheet" href="css/sales_crm.css">
+
+	<!-- <link rel="stylesheet" href="css/sales_planner.css"> -->
+
+	<link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+	<link rel="stylesheet" href="css/responsive.dataTables.min.css">
+
+	<style>
+		.input-group-prepend select {
+			height: 30px !important;
+		}
+
+		[type="checkbox"]:checked,
+		[type="checkbox"]:not(:checked),
+		[type="radio"]:checked,
+		[type="radio"]:not(:checked) {
+			position: absolute;
+			left: -9999px;
+			width: 0;
+			height: 0;
+			visibility: hidden;
+		}
+
+		.schedule_checkbox:checked+label,
+		.schedule_checkbox:not(:checked)+label {
+			position: relative;
+			display: inline-block;
+			padding: 10px;
+			min-width: 100px;
+			font-size: 12px;
+			line-height: 15px;
+			letter-spacing: 1px;
+			margin: 0 auto;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 10px;
+			text-align: center;
+			border-radius: 4px;
+			overflow: hidden;
+			cursor: pointer;
+			color: var(--white);
+			-webkit-transition: all 0.3s linear;
+			transition: all 0.3s linear;
+		}
+
+		.schedule_checkbox:not(:checked)+label {
+			background-color: #fff;
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+			color: #a5a5a5;
+		}
+
+		.schedule_checkbox:checked+label {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			background: linear-gradient(#194bdb, #007ae3);
+		}
+
+		.schedule_checkbox:not(:checked)+label:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		.infor_box{
+			padding: 5px;
+			/* background: #fff; */ 
+		}
+		.infor_box i{
+			/* color: #ffffff;
+			background: #194bdb; */
+			color: #000;
+			padding: 10px 8px 8px 10px;	
+		}
+
+		.infor_box label {
+			/* color: #ffffff;
+			background: #2196f3; */
+			color: #000;
+			margin-right: 5px;
+			padding: 5px;
+			/* padding: 5px 8px 6px 8px;	 */
+			margin-bottom: 0;
+		}
+		.infor_box span{
+			background: #ffffff;
+    		/* padding: 6px 6px 8px 10px; */
+}
+	</style>
+</head>
+
+<body>
+
+	<!-- Navbar Header-->
+
+	<div class="row">
+		<div class="col-md-3">
+			<button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal"
+				data-target="#schedule_a_demo"><i class="fa fa-cog mg-r-10" aria-hidden="true"></i>Form</button>
+		</div>
+
+
+		
+	</div>
+	
+
+	<div class="modal fade select-modal-parent show" id="schedule_a_demo" tabindex="-1" role="dialog"
+		aria-labelledby="autodial_setting">
+		<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+			<div class="modal-content">
+
+				<div class="schedule_demo_header modal-header bd-b-0-f">
+					<h5 class="modal-title" id="lead_details_box_edittitle">Schedule a Demo</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+
+				<div class="modal-body modal_scroll custom_modal">
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="lead-tab" data-toggle="tab" href="#lead" role="tab"
+								aria-controls="lead" aria-selected="false">Lead Details</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " id="session-tab" data-toggle="tab" href="#session" role="tab"
+								aria-controls="session" aria-selected="true">Session Information</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" id="session_slot-tab" data-toggle="tab" href="#session_slot" role="tab"
+								aria-controls="session_slot" aria-selected="false">Book a Slot</a>
+						</li>
+					</ul>
+					<div class="tab-content bd bd-t-0 pd-15-f ht335" id="myTabContent">
+
+						<div class="tab-pane fade active show" id="lead" role="tabpanel" aria-labelledby="lead-tab">
+						
+							<div class="">
+								<div class="row">
+								<div class="col-md-6">
+									<div class="bd bg-white">
+										<div class="d-flex tx-14-f infor_box">
+											<div><i class="fa fa-user-o" aria-hidden="true"></i><label>Name :</label><span>Jhon Drum Recordoo whoo</span> </div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="bd bg-white">
+										<div class="d-flex tx-14-f infor_box">
+											<div><i class="fa fa-envelope-o" aria-hidden="true"></i><label>Email :</label><span>jhondrumrec@skill-lync.com</span> </div>
+										</div>
+									</div>
+								</div>
+								</div>
+						
+								<div class="row">
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-phone" aria-hidden="true"></i><label>Phone :</label><span>+91 8600567892</span> </div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-comment-o" aria-hidden="true"></i><label>Language :</label><span>Hindi/English</span> </div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-graduation-cap" aria-hidden="true"></i><label>Customer Profile :</label><span>Student</span> </div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="row">
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-globe" aria-hidden="true"></i><label>Country :</label><span>India</span> </div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-map-marker" aria-hidden="true"></i><label>State :</label><span>Lucknow</span> </div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-map-marker" aria-hidden="true"></i><label>City :</label><span>Lucknow</span> </div>
+											</div>
+										</div>
+									</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 mg-t-15">
+											<div class="bd bg-white">
+												<div class="d-flex tx-14-f infor_box">
+													<div><i class="fa fa-clock-o" aria-hidden="true"></i><label>Time Zone :</label><span>Asia/South</span> </div>
+												</div>
+											</div>
+										</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-wrench" aria-hidden="true"></i><label>Experience Level for this lead :</label><span>Moderate</span> </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+						</div>
+						<div class="tab-pane fade " id="session" role="tabpanel" aria-labelledby="session-tab">
+							<form>
+								<div class="row tx-12">
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Title<span class="tx-danger">*</span></label>
+											<span class="col-md-8 info_data">: Lead needed course mech</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Description</label>
+											<span class="col-md-8 info_data">: Master's certification program in mech
+												auto</span>
+										</div>
+									</div>
+								</div>
+								<div class="row tx-12">
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Course Name<span class="tx-danger">*</span></label>
+											<span class="col-md-8 info_data">: Product Explanation</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Online or Offline<span
+													class="tx-danger">*</span></label>
+											<span class="col-md-8 info_data">: Online</span>
+										</div>
+									</div>
+
+								</div>
+								<div class="row tx-12">
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Course Price(Conveyed to customer)<span
+													class="tx-danger">*</span></label>
+											<span class="col-md-8 info_data">: 250000</span>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Purpose of the demo<span
+													class="tx-danger">*</span></label>
+											<span class="col-md-8 info_data">: Career Guidance</span>
+										</div>
+									</div>
+
+								</div>
+								<div class="row tx-12">
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Is the session is for career counselling?<span
+													class="tx-danger">*</span></label>
+											<span class="col-md-8 info_data">: Yes</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="row form-group">
+											<label class="col-md-4">Customer Profile<span
+													class="tx-danger">*</span></label>
+											<span class="col-md-8 info_data">: Studying</span>
+										</div>
+									</div>
+								</div>
+
+							</form>
+						</div>
+
+						<div class="tab-pane fade show" id="session_slot" role="tabpanel" aria-labelledby="session-tab">
+							<div class="row">
+								<div class="col-md-6 pd-0">
+									<div class="calendar calendar-first" id="calendar_first">
+										<div class="calendar_header">
+											<button class="switch-month switch-left"> <i
+													class="fa fa-chevron-left"></i></button>
+											<h2></h2>
+											<button class="switch-month switch-right"> <i
+													class="fa fa-chevron-right"></i></button>
+										</div>
+										<div class="calendar_weekdays"></div>
+										<div class="calendar_content"></div>
+									</div>
+								</div>
+								<div class="col-md-6 pd-0">
+
+									<div class="row">
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-1" checked="">
+											<label for="slot-1">10:00 am</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-2">
+											<label for="slot-2">10:35 am</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-3">
+											<label for="slot-3">11:10 am</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-4">
+											<label for="slot-4">11:35 am</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-5">
+											<label for="slot-5">02:05 pm</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-6">
+											<label for="slot-6">02:40 pm</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-7">
+											<label for="slot-7">03:15 pm</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-8">
+											<label for="slot-8">03:50 pm</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-9">
+											<label for="slot-9">04:25 pm</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-10">
+											<label for="slot-10">05:00 pm</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-11">
+											<label for="slot-11">05:35 pm</label>
+										</div>
+										<div class="col-3">
+											<input class="schedule_checkbox" type="radio" name="session_slot"
+												id="slot-12">
+											<label for="slot-12">06:10 pm</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="custom_footer modal-footer bd-0-f">
+					<button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">Cancel</button>
+					<button type="submit" class="btn btn-primary btn-xs">Save</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/schedule_demo.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/select2.min.js"></script>
+	<script src="js/jquery-clockpicker.min.js"></script>
+	<script src="js/feather.min.js"></script>
+	<script src="js/quill.js"></script>
+	<script src="js/typeahead.jquery.min.js"></script>
+	<script src="js/spectrum.js"></script>
+	<script src="js/dashforge.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery.steps.min.js"></script>
+	<script src="js/jquery-clockpicker.min.js"></script>
+	<script src="js/responsive.dataTables.min.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+	<script>
+		feather.replace();
+		$('.select_search').select2();
+
+	</script>
+</body>
+
+</html>

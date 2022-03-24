@@ -1,0 +1,94 @@
+function loadmyprofile(){
+	$.ajax({
+		url:"/profilesettings/getmyprofile",
+		method:"post",
+		data:{[csrftoken]:csrfhash},
+		cache:false,
+		success:function(response){
+			$("#myprofiletab").html(response.profiledetails);
+		}
+	});
+}
+
+function editpersonaldetails(formdata){
+	$.ajax({
+		url:"/profilesettings/editpersonaldetails",
+		method:"POST",
+		data:formdata,
+		cache: false,
+		before:function(){
+			
+		},success:function(data){
+			$('#personaldetailssubmit_btn').prop('disabled', false);
+			if(data.error){
+				Swal.fire({
+					icon: 'error',
+					title: 'ERROR',
+					text: data.msg
+				})
+			}
+			else {
+				Swal.fire({title: "Success!", text: data.msg, icon: "success"}).then(function(){ 
+						$('#edit_personal_info').modal('hide');
+						loadmyprofile();
+					}
+				);
+			}
+		}
+	});
+}
+
+function editworkdetails(formdata){
+	$.ajax({
+		url:"/profilesettings/editworkdetails",
+		method:"POST",
+		data:formdata,
+		cache: false,
+		before:function(){
+			
+		},success:function(data){
+			$('#workdetailssubmit_btn').prop('disabled', false);
+			if(data.error){
+				Swal.fire({
+					icon: 'error',
+					title: 'ERROR',
+					text: data.msg
+				})
+			}
+			else {
+				Swal.fire({title: "Success!", text: data.msg, icon: "success"}).then(function(){ 
+						$('#edit_work_info').modal('hide');
+						loadmyprofile();
+					}
+				);
+			}
+		}
+	});
+}
+
+function resetpassword(formdata){
+	$.ajax({
+		url:"/profilesettings/resetpassword",
+		method:"POST",
+		data:formdata,
+		cache: false,
+		before:function(){
+			
+		},success:function(data){
+			$('#resetpassword_btn').prop('disabled', false);
+			if(data.error){
+				Swal.fire({
+					icon: 'error',
+					title: 'ERROR',
+					text: data.msg
+				})
+			}
+			else {
+				Swal.fire({title: "Success!", text: data.msg, icon: "success"}).then(function(){ 
+						$('#resetpassword_form')[0].reset();
+					}
+				);
+			}
+		}
+	});
+}

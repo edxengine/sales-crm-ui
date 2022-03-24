@@ -1,0 +1,1281 @@
+<?php
+   defined('BASEPATH') OR exit('No direct script access allowed');
+   ?><!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta links-->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+      <meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+      <meta name="author" content="Skill-Lync">
+      <meta name="robot" content="index, follow">
+      <!-- Title -->
+      <title>Sales - CRM</title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/select2.min.css">
+      <link rel="stylesheet" href="css/ionicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/fullcalendar.min.css" rel="stylesheet">
+      <link href="css/quill.snow.css" rel="stylesheet"> 
+      <link href="css/spectrum.css" rel="stylesheet">
+      <!-- DashForge CSS -->
+      <link rel="stylesheet" href="css/dashforge.css">
+      <link rel="stylesheet" href="css/sales_crm.css">
+      <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+	  <style>
+	  .status_radio_check:checked ~ .custom-control-label::before{
+		content: "\f00c";
+    font-family: 'FontAwesome';
+    text-align: center;
+	  }
+	  </style>
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-header navbar-expand-lg d-none-lg justify-content-between bg-gray-100 ">
+            <div class="navbar-brand">
+               <a class=""><img src="images/crm/footer_logo.png" class="wd-auto ht-20" id="" alt="logo"></a>
+            </div>
+            <!-- navbar-brand -->
+            <div  class="navbar-menu-wrapper justify-content-end pd-r-0" id="navbar-content">
+               <div class="nav navbar-menu bd-r hide-nav" id="navbar-menu">
+                  <div class="nav-item with-sub sub-menu">
+                     <a class="nav-link drop-icon" href="#" role="button"> Dashboard</a>
+                     <div class="navbar-menu-sub sub-drop" >
+                        <div class="nav-sub-item d-flex justify-content-between align-items-center " >
+                           <a href="#" class="nav-sub-link mg-r-10" id="admin">Administrator Dashboard</a>
+                           <div class="d-flex">
+                              <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+                              <a href="#" class="tx-dark"><i class="fa fa-check-circle"></i></a>
+                           </div>
+                        </div>
+                        <div class="mg-b-0 pd-l-5-f pd-10 tx-gray-700 tx-12">MY DASHBOARDS</div>
+                        <div class="nav-sub-item d-flex justify-content-between align-items-center">
+                           <a href="#" class="nav-sub-link" id="admin">Custom sales activity</a>
+                           <div class="d-flex">
+                              <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+                              <a><i class="fa fa-trash-o"></i></a>
+                           </div>
+                        </div>
+                        <div class="nav-sub-item">
+                           <a  href="#" class="nav-sub-link" ><i class="fa fa-plus mg-r-5"></i> Create New Dashboard</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon" >Content</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Library</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Images &#38; Documents</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Marketing</a>
+                     <div class="navbar-menu-sub  sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Campaigns</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Landing Pages</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Website Widgets</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Leads</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Smart Views</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Leads</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Activities</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Tasks</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Lists</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Workflow</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Automation</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Forms</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Process Designer</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Apps</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Dashlet Builder</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Lead Marketplaces</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Adwords Data Sync</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Facebook Retargeting</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Templates</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Reports</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Kaleyra SMS Template</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">SMS Templates</a></div>
+                     </div>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link drop-icon">Reports</a>
+                     <div class="navbar-menu-sub sub-drop">
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+                        <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+                     </div>
+                     <!-- nav-sub -->
+                  </div>
+               </div>
+            </div>
+            <div class="navbar-right justify-content-end">
+               <div class="dropdown dropdown-profile mg-r-10 nav-right-menu">
+                  <a href="" class="dropdown-link nav-right-icon" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/search.png" class="wd-20 ht-20" alt="search">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right pd-15-f nav-right-drop">
+                     <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search Leads" aria-label="button-search-lead" aria-describedby="button-search-lead">
+                        <div class="input-group-append">
+                           <button class="btn btn-light" type="button" id="button-search-lead"><i class="fa fa-search"></i></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="dropdown dropdown-profile mg-r-10 ">
+                  <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/question.png" class="wd-20 ht-20" alt="question_Mark">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right pd-15-f">
+                     <a href="#" class="dropdown-item nav-right-item">Manage Apps</a>
+                     <a href="#" class="dropdown-item nav-right-item">Apps Marketplace</a>
+                     <a href="#" class="dropdown-item nav-right-item">Connect My Inbox</a>
+                  </div>
+               </div>
+               <div class="dropdown dropdown-profile">
+                  <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/user.svg" class="img-fluid ht-25" alt="user">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right tx-13 pd-15-f">
+                     <a href="#" class="dropdown-item nav-right-item">Sarang V</a>
+                     <a href="#" class="dropdown-item tx-11 nav-right-item">sarang@skill-lync.com</a>
+                     <a href="#" class="dropdown-item nav-right-item">Skill Lync</a>
+                     <div class="dropdown-divider"></div>
+                     <a  class="dropdown-item nav-right-item"><i class="fa fa-cogs mg-r-10"></i>Settings</a>
+                     <a href="#" class="dropdown-item nav-right-item"><i class="fa fa-user-plus mg-r-10"></i>Manage Users</a>
+                     <a href="#" class="dropdown-item nav-right-item"><i class="fa  fa-power-off mg-r-10"></i>Signout</a>
+                  </div>
+               </div>
+               <!-- <div class="side-nav-btn"> -->
+               <!-- <i class="fa fa-bars"></i> -->
+               <!-- </div> -->
+            </div>
+            <!-- navbar-right -->
+         </nav>
+         <!-- navbar -->
+      </header>
+      <!-- Navbar Header-->
+      <div class="container-fluid sal_crm_bg">
+         <div class="row">
+            <div class="col-md-3 col-sm-3 bg_white left_container">
+               <div class="card tx-white pd-15 lead_details_card mg-t-10  bg_gradient">
+                  <div class="mg-xl-b-7"><span class="badge  badge-success">Customer</span> <span class="badge badge-danger">Closed Lost</span></div>
+                  <h3 class="tx-white card-title mg-xl-b-7 tx-22-f">Sarangarajan Vijayaragavan Iyengar</h3>
+                  <div class="row mg-xl-b-7">
+                     <div class="col-md-10"><i data-feather="phone"></i><span class="pd-l-5 tx-14-f">+91 90909099090 </span></div>
+                     <div class="col-md-2"><a href="javascript:void(0)"> <i data-feather="copy"></i> </a> </div>
+                  </div>
+                  <div class="row mg-xl-b-7">
+                     <div class="col-md-10"><i data-feather="mail"></i><span class="pd-l-5 tx-14-f">saravana.kumar@skill-lync.com </span></div>
+                     <div class="col-md-2"><a href="javascript:void(0)"> <i data-feather="copy"></i> </a> </div>
+                  </div>
+                  <div class="row mg-xl-b-7 col-md-12 flex-nowrap">
+                     <div><i data-feather="info"></i> </div>
+                     <div class="pd-l-4 tx-14-f">24 year old M.E graduate. <br>2-3 years of experience from India.</div>
+                  </div>
+                  <div class="row mg-xl-b-7 col-md-12 flex-nowrap">
+                     <div>
+                        <ion-icon name="magnet-outline"></ion-icon>
+                     </div>
+                     <div class="source_container pd-l-4 d-flex">
+                        <a href="javascript:void(0)">
+                           <div class="source_count tx-12-f">Source 1</div>
+                           <div class="source_from tx-14-f"> LinkedIn</div>
+                           <div class="source_hc tx-12-f"> HC</div>
+                        </a>
+                        <a href="javascript:void(0)">
+                           <div class="source_count tx-12-f">Source 2 </div>
+                           <div class="source_from tx-14-f"> LinkedIn</div>
+                           <div class="source_hc tx-12-f"> HC</div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="accordion_container">
+                  <div class="accordion left_side_accordion" id="accordion">
+                     <h6 class="lg_green_bg">
+                        <div class="d-flex justify-content-between">
+                           <div class="tx-16">Engagement Score</div>
+                           <div>3112</div>
+                        </div>
+                        <div class="show_details"> Show Details</div>
+                     </h6>
+                     <div>
+                        <div class="row tx-12 align-items-center pd-t-5">
+                           <div class="col-md-2 tx-semibold">Sales </div>
+                           <div class="col-md-10 row">
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                           </div>
+                        </div>
+                        <div class="row tx-xl-12 align-items-center pd-t-5">
+                           <div class="col-md-2 tx-semibold">Support </div>
+                           <div class="col-md-10 row">
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-orange">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                           </div>
+                        </div>
+                        <div class="row tx-xl-12 align-items-center pd-t-5">
+                           <div class="col-md-2 tx-semibold">Career </div>
+                           <div class="col-md-10 row">
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                              <div class="li-bg-red">DR - 5/5 </div>
+                              <div class="li-bg-red">DR - 5/5 </div>
+                              <div class="li-bg-green">DR - 5/5 </div>
+                           </div>
+                        </div>
+                     </div>
+                     <h6>
+                        <div class="tx-16">HAPC Comments <span class="tx-10 tx-normal ">Last 5 comments</span></div>
+                     </h6>
+                     <div>
+                        <div class="d-flex mg-y-10">
+                           <div class="hapc_dot green"> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">16 hours ago </div>
+                              <div class="hapc_content"> Seems intrested in course but payment needs to be reduce for him Seems intrested in course but payment needs to be reduce for him</div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="hapc_dot green"> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">17 hours ago </div>
+                              <div class="hapc_content"> Seems intrested in course but payment   for him Seems intrested in course but payment needs to be reduce for him</div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="hapc_dot gray"> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">22 hours ago </div>
+                              <div class="hapc_content"> Seems intrested in course but payment needs to be reduce for  course but payment needs to be reduce for him</div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="hapc_dot yellow"> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">35 hours ago </div>
+                              <div class="hapc_content"> Seems intrested in course   for him Seems intrested in course but payment needs to be reduce for him  course but payment needs to be reduce for him </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="hapc_dot red"> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">48 hours ago </div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                     </div>
+                     <h6>
+                        <div class="tx-16">Email Interaction <span class="tx-10 tx-normal ">Last 14 days</span></div>
+                     </h6>
+                     <div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="mail"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">Opened | Clicked  </div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="mail"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">Opened | Clicked </div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="mail"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">Unopened | No clicks</div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="mail"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">Unopened | No clicks</div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="mail"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">Unopened | No clicks</div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                     </div>
+                     <h6>
+                        <div class="tx-16">Cloud Activity <span class="tx-10 tx-normal ">Last 14 days</span></div>
+                     </h6>
+                     <div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="globe"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">12 hours  </div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="globe"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">10 hours </div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="globe"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">10 hours</div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="globe"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">6 hours</div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                        <div class="d-flex mg-y-10">
+                           <div class="emil_icon"><i data-feather="globe"></i> </div>
+                           <div class="hapc_status pd-x-7">
+                              <div class="hapc_time tx-14">5 hours</div>
+                              <div class="hapc_content"> Seems intrested in course course but payment needs to be reduce for him  course but payment needs to be reduce for him  course but payment needs to be reduce for him  </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-sm-6 pd-0">
+               <div class="sal_crm_tab pd-t-10">
+                  <div class="tabs_space">
+                     <div>
+                        <ul class="nav nav-line flex-row" id="Tentative_Purchase" role="tablist">
+                           <li class="nav-item">
+                              <a class="nav-link active" id="lead-tab" data-toggle="tab" href="#Lead_details" role="tab" aria-controls="home" aria-selected="true">Lead Details</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" id="activities-tab" data-toggle="tab" href="#activities" role="tab" aria-controls="profile" aria-selected="false">Activities</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" id="salestri-tab" data-toggle="tab" href="#sales_trainer" role="tab" aria-controls="contact" aria-selected="false">Sales Trainer</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" id="adddet-tab" data-toggle="tab" href="#add_details" role="tab" aria-controls="contact" aria-selected="false">Add Details +</a>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="mg-x-10 "><button type="button" class="btn btn-outline-light btn-padd font_14">+ Tentative Purchase</button></div>
+                  </div>
+                  <div class="tab-content bd-t-0 pd-t-15 pd-b-15" id="myTabContent">
+                     <div class="tab-pane fade show active" id="Lead_details" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="card">
+                           <div class="card-header items-sep" data-toggle="collapse" href="#course1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                              <div><span class="pd-r-10 font_16">Tentative Purchase 1</span><button type="button" class="btn status_red btn-padd">Closed Lost</button>
+                              </div>
+                              <div class="">
+                                 <button type="button" class="btn btn-cust">+ Course</button>
+                                 <button type="button" class="btn btn-cust">+ Sales Plan</button>
+                                 <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                              </div>
+                           </div>
+                           <div class="card-body pd-l-15 pd-r-15 pd-t-15 pd-b-0 collapse show" id="course1">
+                              <span class="font_16">Courses that might lead to purchase</span>
+                              <ul class="crs_list_purc">
+                                 <li>
+                                    <a href="#">Post Graduate Certification Program in Hybrid Electric Vehciles</a>
+                                    <span class="float-right">
+                                    <button type="button" class="btn btn-cust">Trainer</button>
+                                    <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> --></span>
+                                 </li>
+                                 <li>
+                                    <a href="#">Post Graduate Certification Program in Hybrid Electric Vehciles</a>
+                                    <span class="float-right">
+                                    <button type="button" class="btn btn-cust">Trainer</button>
+                                    <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> --></span>
+                                 </li>
+                              </ul>
+                              <div class="row bd-t bd-b">
+                                 <div class="col-md-4 bd-r ac_price pd-10">
+                                    <span class="font_16 pd-t-5 pd-b-5">Actual Price</span>
+                                    <div class="pd-t-5 pd-b-5"><input type="text" placeholder="Enter Actucal Price" class="bd rounded-5 w-100" /></div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust active_btn">INR</a>
+                                       <a class="btn btn-cust">USD</a>
+                                       <a class="btn btn-cust">EUR</a>
+                                    </div>
+                                    <div class="items-sep">
+                                       <form action="#" method="post">
+                                          <div class="select">
+                                             <select name="nameValueSelect" class="bd rounded-5 select_field font_10" required>
+                                                <option value="" selected>Others</option>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                             </select>
+                                          </div>
+                                       </form>
+                                       <div class="pd-t-5 pd-b-5">
+                                          <span class="txt_red font_10">Discount > 35%</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 bd-r pd-10">
+                                    <div class="font_16">Proposed Price</div>
+                                    <label class="txt_blue font_14">2,00,000 INR</label>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">10% off</a>
+                                       <a class="btn btn-cust active_btn">20% off</a>
+                                       <a class="btn btn-cust">30% off</a>
+                                    </div>
+                                    <div class="items-sep pd-t-5 pd-b-5 cus_dis">
+                                       <div><input type="text" placeholder="Custom Discount (%)" class="bd rounded-5 wd-80p" /></div>
+                                       <a class="btn btn-cust">0% off</a>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pd-10">
+                                    <div class="font_16">Approx. Purchase Date</div>
+                                    <label class="txt_blue font_14">Sat 22 Jan</label>
+                                    <div class=" pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">t+1 days</a>
+                                       <a class="btn btn-cust active_btn">t+3 days</a>
+                                       <a class="btn btn-cust">t+5 days</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">Custom</a>
+                                       <a class="btn btn-cust mg-l-10"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row bd-b">
+                                 <div class="col-md-4 bd-r ac_price pd-10">
+                                    <div class="font_16 pd-t-5 pd-b-5">Follow Up Date</div>
+                                    <label class="txt_blue font_14">Sat 22 Jan</label>
+                                    <div class=" pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">t+1 days</a>
+                                       <a class="btn btn-cust">t+3 days</a>
+                                       <a class="btn btn-cust">t+5 days</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust active_btn">t+2 days</a>
+                                       <a class="btn btn-cust">t+4 days</a>
+                                       <a class="btn btn-cust">Custom</a>
+									   <input type="date" name="followup" />
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                       <span class="txt_red font_10">Follow Up Required | Stage is Opp</span>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 bd-r pd-10">
+                                    <div class="font_16">Modify Stage</div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">New</a>
+                                       <a class="btn btn-cust">Prospect</a>
+                                       <a class="btn btn-cust">Dead</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">Discovery</a>
+                                       <a class="btn btn-cust">Opportunity</a>
+                                       <a class="btn btn-cust">Cold</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust bg_red">Closed Lost</a>
+                                       <a class="btn btn-cust">Closed Won</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <span class="txt_red font_10">Follow Up Required | Stage is Opp</span>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pd-10">
+                                    <textarea class="lead_details_textarea bd rounded-5" name="" placeholder="Please put a comment regarding the current purchase."></textarea>
+                                    <div class="items-sep pd-t-5 pd-b-5 font_10">
+                                       <div class="custom-control ">
+                                          <input type="radio" class="custom-control-input status_radio_check" name="status_radio" id="customCheck1">
+                                          <label class="custom-control-label" for="customCheck1">Positive</label>
+                                       </div>
+                                       <div class="custom-control">
+                                          <input type="radio" class="custom-control-input status_radio_check" name="status_radio" id="customCheck2">
+                                          <label class="custom-control-label" for="customCheck2">Neutral</label>
+                                       </div>
+                                       <div class="custom-control">
+                                          <input type="radio" class="custom-control-input status_radio_check" name="status_radio" id="customCheck3">
+                                          <label class="custom-control-label" for="customCheck3">Negative</label>
+                                       </div>
+                                    </div>
+                                    <div class="items-sep pd-t-5 pd-b-5">
+                                       <span class="btn btn-cust">Submit</span>
+                                       <span class="btn btn-cust bg_green w-70_btn">Submit & Go to Next</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card mg-t-10">
+                           <div class="card-header items-sep" data-toggle="collapse" href="#course2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                              <div><span class="pd-r-10 font_16">Purchase 11453</span><button type="button" class="btn status_green btn-padd">Closed Won</button>
+                              </div>
+                              <div class=""><i class="fa fa-user-circle-o pd-r-5 txt_gray" aria-hidden="true"></i><span class="txt_blue">Sarangarajan. V </span> <span class="txt_green">(active)</span></div>
+                           </div>
+                           <div class="card-body pd-l-15 pd-r-15 pd-t-15 pd-b-0  collapse" id="course2">
+                              <span class="font_16">Courses that might lead to purchase</span>
+                              <ul class="crs_list_purc">
+                                 <li>
+                                    <a href="#">Post Graduate Certification Program in Hybrid Electric Vehciles</a>
+                                    <span class="float-right">
+                                    <button type="button" class="btn btn-cust">Trainer</button>
+                                    <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> --></span>
+                                 </li>
+                                 <li>
+                                    <a href="#">Post Graduate Certification Program in Hybrid Electric Vehciles</a>
+                                    <span class="float-right">
+                                    <button type="button" class="btn btn-cust">Trainer</button>
+                                    <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> --></span>
+                                 </li>
+                              </ul>
+                              <div class="row bd-t bd-b">
+                                 <div class="col-md-4 bd-r ac_price pd-10">
+                                    <span class="font_16 pd-t-5 pd-b-5">Actual Price</span>
+                                    <div class="pd-t-5 pd-b-5"><input type="text" placeholder="Enter Actucal Price" class="bd rounded-5 w-100" /></div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">INR</a>
+                                       <a class="btn btn-cust active_btn">USD</a>
+                                       <a class="btn btn-cust">EUR</a>
+                                    </div>
+                                    <div>
+                                       <form action="#" method="post">
+                                          <div class="select">
+                                             <select name="nameValueSelect" class="bd rounded-5 select_field font_10">
+                                                <option value="" selected>Others</option>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                             </select>
+                                          </div>
+                                       </form>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <span class="txt_red font_10">Discount > 35%</span>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 bd-r pd-10">
+                                    <div class="font_16">Proposed Price</div>
+                                    <label class="txt_blue font_14">2,00,000 INR</label>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust active_btn">10% off</a>
+                                       <a class="btn btn-cust">20% off</a>
+                                       <a class="btn btn-cust">30% off</a>
+                                    </div>
+                                    <div class="items-sep pd-t-5 pd-b-5 cus_dis">
+                                       <div><input type="text" placeholder="Custom Discount (%)" class="bd rounded-5 wd-80p" /></div>
+                                       <a class="btn btn-cust">0% off</a>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pd-10">
+                                    <div class="font_16">Approx. Purchase Date</div>
+                                    <label class="txt_blue font_14">Sat 22 Jan</label>
+                                    <div class=" pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust active_btn">t+1 days</a>
+                                       <a class="btn btn-cust">t+3 days</a>
+                                       <a class="btn btn-cust">t+5 days</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <span class="btn btn-cust">Custom</span>
+                                       <a class="btn btn-cust mg-l-10"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row bd-b">
+                                 <div class="col-md-4 bd-r ac_price pd-10">
+                                    <div class="font_16 pd-t-5 pd-b-5">Follow Up Date</div>
+                                    <label class="txt_blue font_14">Sat 22 Jan</label>
+                                    <div class=" pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">t+1 days</a>
+                                       <a class="btn btn-cust active_btn">t+3 days</a>
+                                       <a class="btn btn-cust">t+5 days</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">t+2 days</a>
+                                       <a class="btn btn-cust">t+4 days</a>
+                                       <a class="btn btn-cust">Custom</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <span class="txt_red font_10">Follow Up Required | Stage is Opp</span>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 bd-r pd-10">
+                                    <div class="font_16">Modify Stage</div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">New</a>
+                                       <a class="btn btn-cust">Prospect</a>
+                                       <a class="btn btn-cust">Dead</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">Discovery</a>
+                                       <a class="btn btn-cust">Opportunity</a>
+                                       <a class="btn btn-cust">Cold</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <a class="btn btn-cust">Closed Lost</a>
+                                       <a class="btn btn-cust bg_green">Closed Won</a>
+                                    </div>
+                                    <div class="pd-t-5 pd-b-5">
+                                       <span class="txt_red font_10">Follow Up Required | Stage is Opp</span>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 pd-10">
+                                    <textarea class="lead_details_textarea bd rounded-5" name="" placeholder="Please put a comment regarding the current purchase."></textarea>
+                                    <div class="items-sep pd-t-5 pd-b-5 font_10">
+                                       <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                          <label class="custom-control-label" for="customCheck1">Positive</label>
+                                       </div>
+                                       <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                          <label class="custom-control-label" for="customCheck2">Neutral</label>
+                                       </div>
+                                       <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                          <label class="custom-control-label" for="customCheck3">Negative</label>
+                                       </div>
+                                    </div>
+                                    <div class="items-sep pd-t-5 pd-b-5">
+                                       <span class="btn btn-cust">Submit</span>
+                                       <span class="btn btn-cust bg_green w-70_btn">Submit & Go to Next</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="card">
+                           <div class="card-header pd-10-f">
+                              <div class="row align-items-center">
+                                 <div class="col-md-8">
+                                    <div class="search-form">
+                                       <input type="search" class="form-control" placeholder="Search">
+                                       <button class="btn" type="button"><i data-feather="search"></i></button>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="float-right">
+                                       <button type="button" class="btn btn-cust pd-y-8-f slide_ico"><i data-feather="sliders"></i> Activity Type</button>
+                                       <button type="button" class="btn btn-cust pd-y-8-f slide_ico"><i data-feather="sliders"></i> Time</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="card-body bg-white">
+                              <div class="activite_date txt_blue tx-12"><span>Today</span></div>
+                              <ul class="crs_list_purc">
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-envelope-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>-->
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-envelope-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>-->
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-user-circle-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!-- <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>--> 
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                              </ul>
+                              <div class="activite_date txt_blue tx-12"><span>01 Feb 2022</span></div>
+                              <ul class="crs_list_purc">
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-envelope-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>-->
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-envelope-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>-->
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-user-circle-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!-- <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>--> 
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-envelope-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>-->
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-envelope-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>-->
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="row align-items-center">
+                                       <div class="col-md-1 pd-r-0"><i class="fa fa-envelope-o txt_blue" aria-hidden="true"></i></div>
+                                       <div class="col-md-8 pd-0 tx-12">Yellow Messenger to LSQ Live Chat  CareerCouselingSessionRequest - Design Engineer Master's Certification Program</div>
+                                       <div class="col-md-3  tx-right">
+                                          <!--<button type="button" class="btn btn-cust forward_ico"><i class="fa fa-share" aria-hidden="true"></i></button>-->
+                                          <!-- <button type="button" class="btn btn-cust"><i class="fa fa-pencil" aria-hidden="true"></i></button>-->
+                                          <!--<button type="button" class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></button> -->
+                                       </div>
+                                       <div class="offset-md-1 col-md-11 pd-0 tx-10 tx-gray-500"><I>Added by Sarang V on 06 Feb 2022 01:31 AM</I></div>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade" id="sales_trainer" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="card">
+                           <div class="card-header pd-10-f">
+                              <div class="row align-items-center">
+                                 <div class="col-md-8">
+                                    <div class="search-form">
+                                       <input type="search" class="form-control" placeholder="Search">
+                                       <button class="btn" type="button"><i data-feather="search"></i></button>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="float-right sales_trainer_top items-sep">
+                                       <span class="st_switch"> Master's only</span><label class="switch">
+                                       <input type="checkbox">
+                                       <span class="slider round"></span>
+                                       </label> 
+                                       <button type="button" class="btn btn-cust pd-y-8-f slide_ico"><i data-feather="sliders"></i> Domain</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="card-body bg-white">
+                              <div class="activite_date txt_blue tx-12"><span>Popular Courses</span></div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis is  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis </span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program </span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                              <div class="d-flex justify-content-between course_list mg-b-15-f ">
+                                 <div class="d-flex">
+                                    <div> <img src="images/dimond.png" alt=""/></div>
+                                    <div> <span class="tx-12"> Master Certificate in program in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis  in Hybrid Electric Vechicle Design and Analysis</span></div>
+                                 </div>
+                                 <div> <button type="button" class="btn btn-cust">View Details</button></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade" id="add_details" role="tabpanel" aria-labelledby="contact-tab">
+                         <div class="card">
+						<div class="card-header pd-10-f">
+							<div class="row align-items-center">
+							    
+							   <div class="col-md-6 offset-md-6">
+								   <div class="float-right sales_trainer_top items-sep">
+								   <span class="st_switch"> Hide Empty Fields</span><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                    </label>
+								   <button type="button" class="btn btn-cust pd-y-8-f"><i data-feather="edit-2"></i>Edit</button>
+								   <button type="button" class="btn btn-cust pd-y-8-f"><i data-feather="x"></i>Discard</button>
+								   <button type="button" class="btn btn-cust pd-y-8-f mg-l-10 bg_dark_green"><i data-feather="save"></i> Save</button>
+									</div>
+							   </div>
+							    
+						   </div>
+						</div>
+						<div class="card-body bg-white">
+						  
+						   <div> 
+							  <div class="activite_date txt_blue tx-12"><span> Lead Details</span></div>
+                              <div class="row mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Lead Number </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">First Name </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Last Name </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Email </div>
+                                 <div class="col-md-7 det_input"><input type="email" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Phone Number </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Lead Branch </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Lead Source</div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Lead Stage </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Owner </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                           </div>
+                           <div>
+						    <div class="activite_date txt_blue tx-12"><span> Course Details</span></div>
+                              
+                              <div class="row mg-b-10">
+                                 <div class="col-md-5  det_label tx-12">Institution Name </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">College </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                              <div class="row  mg-b-8">
+                                 <div class="col-md-5  det_label tx-12">Domain </div>
+                                 <div class="col-md-7 det_input"><input type="text" name="" /></div>
+                              </div>
+                           </div>
+                        
+						</div>
+						
+					</div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="call_container col-md-6  col-sm-6 offset-sm-3 offset-md-3" style="display:none !important;">
+               <div>
+                  <div class="call_status">Call In progress</div>
+                  <div class="call_timing">00:00 <span> Autodial will be paused after the active call</span></div>
+               </div>
+               <div class="call_activity">
+                  <div class="call_pause">
+                     <a href="javascript:void(0)">
+                        <ion-icon name="pause-outline"></ion-icon>
+                        Pause Autodial 
+                     </a>
+                  </div>
+                  <div class="call_repeat">
+                     <a href="javascript:void(0)">
+                        <ion-icon name="reload-outline"></ion-icon>
+                     </a>
+                  </div>
+                  <div class="call_left">
+                     <a href="javascript:void(0)">
+                        <ion-icon name="pause-outline"></ion-icon>
+                     </a>
+                  </div>
+                  <div class="call_right">
+                     <a href="javascript:void(0)">
+                        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                     </a>
+                  </div>
+                  <div class="call_cut">
+                     <a href="javascript:void(0)">
+                        <ion-icon name="call"></ion-icon>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-3 bg_white right_conainer">
+               <div class="row pd-y-5">
+                  <div class="col-6 d-flex align-items-center">
+                     <h5 class="mg-b-0">Performance</h5>
+                  </div>
+                  <div class="col-6">
+                     <select class="custom-select">
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Yearly</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="card bg_gradient">
+                  <div class="card-body pd-10">
+                     <div class="d-flex justify-content-between">
+                        <h5 class="d-flex align-items-center tx-white mg-b-0 tx-14">Total Revenue</h5>
+                        <span class="tx-right tx-white tx-12">#Team Ranking</span>
+                     </div>
+                     <div class="d-flex justify-content-between">
+                        <h3 class="d-flex align-items-center tx-white mg-b-0 tx-18-f">INR 16,50,000</h3>
+                        <div class="bd bd-success tx-right pd-x-20-f d-flex align-items-center bg_light_green tx-12-f tx-success">1</div>
+                     </div>
+                     <h6 class="tx-white pd-y-3"><span class="tx-success"><i class="fa fa-caret-up tx-success mg-r-7"></i>+10.00%</span> since last month</h6>
+                     <div class="progress mg-b-3 ht-7">
+                        <div class="progress-bar bg-success wd-100p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                     <h6 class="tx-white tx-right mg-b-0"><span class="tx-success">120% </span>of Target:INR 24,00,000</h6>
+                  </div>
+               </div>
+               <div class="tx-right mg-y-5">
+                  <span class="tx-12">#Team Ranking</span>
+               </div>
+               <div class="row pd-y-5  tx-12 ">
+                  <div class="col-5 d-flex align-items-center tx-primary tx-medium">Calls Attempted</div>
+                  <div class="col-4 d-flex align-items-center justify-content-end tx-bold">481 calls</div>
+                  <div class="col-3">
+                     <div class="bd bd-success tx-right pd-3 bg_light_green tx-success">54</div>
+                  </div>
+               </div>
+               <div class="row pd-y-5  tx-12 ">
+                  <div class="col-5 d-flex align-items-center tx-primary tx-medium">Outgoing calls</div>
+                  <div class="col-4 d-flex align-items-center justify-content-end tx-bold">1228 mins</div>
+                  <div class="col-3">
+                     <div class="bd bd-success tx-right pd-3 bg_light_green tx-success">54</div>
+                  </div>
+               </div>
+               <div class="row pd-y-5  tx-12 ">
+                  <div class="col-5 d-flex align-items-center tx-primary tx-medium text-wrap">Total Opportunity</div>
+                  <div class="col-4 d-flex align-items-center justify-content-end tx-bold tx-nowrap">INR 35,00,000</div>
+                  <div class="col-3">
+                     <div class="bd bd-danger tx-right pd-3 bg_light_red tx-danger">54</div>
+                  </div>
+               </div>
+                
+               <div class="d-flex mg-y-5">
+                  <button class="btn blue_btn bg_gradient tx-white w-30  tx-left tx-16 "><i class="fa fa-whatsapp"></i> </button>
+                  <button class="btn blue_btn bg_gradient tx-white w-30  tx-left tx-16 mg-x-10"><i class="fa fa-envelope-o"></i></button>
+                  <button class="btn blue_btn bg_gradient tx-white w-30 tx-left tx-16"><i class="fa fa-cube"></i></button>
+               </div>
+               
+               <div class="pd-b-20">
+                  <h5 class="tx-14">Lead Objection</h5>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection1">
+                     <label class="custom-control-label" for="leadobjection1">Lead Number is Incorrect</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection2">
+                     <label class="custom-control-label" for="leadobjection2">I Need Help to Pitch this Lead</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <div class="d-flex">
+                        <div class="tx-left">
+                           <input type="checkbox" class="custom-control-input" id="leadobjection9">
+                           <label class="custom-control-label" for="leadobjection9">Lead speaks only</label>
+                        </div>
+                        <div class="pd-l-5">
+                           <select class="bd rounded-5 select_field font_10">
+                              <option>Hindi</option>
+                              <option>English</option>
+                              <option>Tamil</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection3">
+                     <label class="custom-control-label" for="leadobjection3">Competition was mentioned</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection4">
+                     <label class="custom-control-label" for="leadobjection4">Product price is too high</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection8">
+                     <label class="custom-control-label" for="leadobjection8">Lead is an expert. I can sell to him.</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection5">
+                     <label class="custom-control-label" for="leadobjection5">Bad feedback about product</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection6">
+                     <label class="custom-control-label" for="leadobjection6">Trust issue</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                     <input type="checkbox" class="custom-control-input" id="leadobjection7">
+                     <label class="custom-control-label" for="leadobjection7">I think this lead quality is bad</label>
+                     <div class="row pd-y-3">
+                        <div class="col-6">
+                           <a href="javascript:void(0)" class="quality_btn pd-y-2 pd-x-10">Wrong Background</a>
+                        </div>
+                        <div class="col-6">
+                           <a href="javascript:void(0)" class="quality_btn pd-y-2 pd-x-10">No Product for lead</a>
+                        </div>
+						<div class="col-6 mg-t-5">
+                           <a href="javascript:void(0)" class="quality_btn pd-y-2 pd-x-10 ">Others</a>
+                        </div>
+                     </div> 
+                  </div>
+               </div>
+               <div class="call_quality_container bg-white" style="display:none !important;">
+                  <div class="d-flex align-items-center">
+                     <h6>How is the call quality?</h6>
+                     <button class="btn btn-outline-success mg-10"><i class="fa fa-thumbs-up"></i></button>
+                     <button class="btn btn-outline-danger mg-10"><i class="fa fa-thumbs-down"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer style="display:none !important">
+         <div class="container-fluid bg-dark fixed-bottom">
+            <div class="row row-xs">
+               <div class="col-md-12 pd-15">
+                  <ul class=" customer-li pd-l-0 mg-b-0 tx-10" >
+                     <li class="d-inline" >
+                        <a href="#" class="tx-white footer-a" id="">&#169; 2021 Skill Lync Inc. All Rights Reserved</a>
+                     </li>
+                     <li class="d-inline"><a href="#" class="footer-a">Help</a></li>
+                     <li class="d-inline"><a href="#" class="footer-a">Terms of Service</a></li>
+                     <li class="d-inline"><a href="#" class="footer-a">Privacy Policy</a></li>
+                     <li class="d-inline"><a href="#" class="footer-a">Acceptable Use</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!-- JS -->
+      </footer>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script src="js/feather.min.js"></script>
+      <script src="js/quill.js"></script>
+      <script src="js/typeahead.jquery.min.js"></script>
+      <script src="js/spectrum.js"></script>
+      <script src="js/dashforge.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.steps.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script>
+         feather.replace();
+         $('#accordion').accordion({
+         heightStyle: 'content',
+         collapsible: true
+         });
+      </script>
+   </body>
+</html>
+
+
+
+
+ 

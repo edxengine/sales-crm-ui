@@ -1,0 +1,341 @@
+body{
+	margin:0;
+	padding:0;
+	width:100%;
+	overflow-x:hidden;
+	font-family: Segoe UI,Trebuchet MS,Sans-Serif !important;
+	color: #212529;
+	font-size:0.675rem !important;
+}
+tbody{
+	font-size:0.675rem !important;
+}
+.bg-change{
+	background:#0168fa;
+	color:#fff;
+}
+.bg-blue{/** User_permission/userpage_modal img bg **/
+	    background: #EDF4F9;
+}
+.bg-change-submenu{
+	background:#fff4ec;
+}
+
+
+#vertical-tab a{
+	border-bottom:1px solid #CDD4E0;
+	border-radius: 0px;
+}
+
+/** Settings profile page **/
+
+.progresss-border{
+	border-right:5px solid;
+}
+.report-row:hover{
+	
+    border-radius: 0px;
+    background: #fff4ec;
+    border-top: 1px solid #ffdbbc;
+    border-bottom: 1px solid #ffdbbc;
+    color: #000;
+}
+#x-btn{
+	border-top-right-radius: 0;
+    border-bottom-right-radius: 0px;
+}
+/**Modal With Height**/
+.scroll-modal{
+	overflow-y:scroll;
+	height: 430px;
+}
+/** User Page **/
+.cogs-btn:hover .list-show{
+	display:block !important;
+}
+/** Date Picker **/
+#ui-datepicker-div{
+	z-index: 1056 !important;
+}
+.disable-cursor{
+	cursor:not-allowed;
+}
+.user-table .dropdown .fa:hover .dropdown-menu{
+	display:block;
+}
+/*** Settings Page **/
+#gray-bg > .nav-item .nav-link{
+	justify-content: left !important;
+    background-color: #f6f6f6;	
+}
+
+#gray-bg > .nav-item .nav-link.active{
+	background-color:#309AFC;
+	color:#fff;
+}
+#tab-bg > .nav-item .nav-link.active{
+	background-color:#FFF4EC;
+	border:1px solid #FFF4EC;
+	color:#000;
+}
+#tab-bg > .nav-item .nav-link{
+	background-color:#fff;
+	justify-content:left !important;
+}
+
+
+/** PROFILE SETTINGS ADVANCED CONFIG **/
+.sp-container{
+		z-index: 1056 !important;
+	}
+.small-dropdown > .form-control {
+	height: calc(1.5em + 0.5rem + 2px) !important;
+	padding: 0rem 0.6rem;
+	}
+.upload-btn-wrapper {
+	  position: relative;
+	  overflow: hidden;
+	  display: inline-block;
+	}
+
+	.upload-btn-wrapper input[type=file] {
+	   width: 99px;
+		height: 29px;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  opacity: 0;
+	}
+/** User permissions **/
+/** User Page **/
+.select2-dropdown{
+	z-index: 1056 !important;
+}
+
+.clamp_body > tr > td >span{
+	 display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.perm_temp > div > span{
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.line-clamp{
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.disabled_div
+{
+  pointer-events: none;
+  opacity: 0.7;
+}
+.blue-border > .nav-item .nav-link.active{
+	border-left: 5px solid !important;
+}
+
+
+/* Lead forms */
+.lead_forms_collapse{
+	display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+}
+#lead_forms_collapse_cards{
+	display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+}
+.lead_from_fields{
+	padding:5px;
+	border:1px dashed gray;
+	margin:5px !important;
+	background:#fff;
+}
+
+/* User Assignment Quota */
+.multiselect-native-select > .btn-group{
+	width: 100%;
+}
+.multiselect-selected-text{
+	float:left !important;
+}
+.multiselect-container{
+	width: 100%;
+	max-height: 250px;
+    overflow: auto;
+	font-size:11px !important;
+}  
+/* Dash Borad */
+.Dash_grid_tab{
+	display: grid;
+    grid-template-columns: 6rem 1fr;
+    grid-gap: 20px;
+	padding:10px;
+}
+#tab-btn > .nav-link.active{
+	background-color: #fff;
+    z-index: 5;
+    color: #0168fa;
+	border-top:3px solid;
+}
+#tab-btn{
+	height:39px;
+}
+.no_hover a:hover{
+	color:#fff;
+	
+}
+.Dash_grid_tab:hover{
+	background:#E5F2FF;
+}
+.multiselect-native-select > .btn-group > .multiselect{
+	font-size:11px !important;
+}
+.select2-selection--single{
+	height: calc(1.5em + 0.9375rem + 2px) !important;
+}
+
+.member_list_grid{
+	display: grid;
+    grid-template-columns: 1rem auto;
+    grid-gap: 20px;
+}
+.dropdown_dashboard:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu{
+    margin-top: 0;
+}
+.active_btn{
+	background:#0168fa !important;
+	color:#FFF !important;
+}
+.custom-select{
+	font-size:10px !important;
+}
+.small-dropdown .form-control {
+	height: calc(1.5em + 0.5rem + 2px) !important;
+	padding: 0rem 0.6rem;
+}
+/* settings page cookies*/
+.cookie_bar{
+	z-index:9999;
+	position:absolute;
+	top:0px;
+}
+
+/* Authentication Provider Security Page */
+.select_btn{
+	visibility:hidden;
+	opacity: 0.5;
+	cursor:pointer;
+}
+.select2-container{
+	width:100% !important;
+}
+
+/* Email Campaign */
+.wizard > .content > .title.current{
+	display:none !important;
+}
+.wizard > .content {
+	padding:0px !important;
+}
+.wizard > ul{
+	display:none !important;
+}
+.campaign_cards{
+	display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-gap: 15px;
+    
+}
+.blank_img{
+	max-height:180px;
+    width: auto;
+    height: auto;
+}
+.clamp_card{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: auto;
+}
+.card_hover:hover{
+	box-shadow:0 0.5rem 1rem rgb(0 0 0 / 15%);
+	cursor: pointer;
+}
+.btn_scroll{
+	height:200px;
+	overflow-y:scroll;
+}
+.align_left > .btn{
+	text-align:left;
+}
+
+.btn_scroll::-webkit-scrollbar{
+	display:none;
+}
+
+.nav_after_1::after, .nav_after::after{
+	content:"";
+    border-style: dashed;
+    border-color: transparent;
+    border-width: 0.20em;
+    display: -moz-inline-box;
+    display: inline-block;
+    font-size: 120px;
+    vertical-align: middle;
+    border-left-color: #e5e9f2;
+	position:absolute;
+	right:-48px;
+	top:0px;
+	z-index: 1;
+}
+
+.nav_after_2::before, .nav_after::before{
+	content:"";
+    border-style: dashed;
+    border-color: transparent;
+    border-width: 0.20em;
+    display: -moz-inline-box;
+    display: inline-block;
+    font-size: 120px;
+    vertical-align: middle;
+    border-left-color: #fff;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#step_nav .nav-link.active, #step_nav .show > .nav-link{
+	background-color:#fd7e14 !important;
+}
+#nav_active_link::after{
+    border-left-color: #FD7E14;
+}
+/* List Details */
+@media (max-width: 1176px) {
+   .drop_table {
+        position: absolute !important;
+		
+    }
+	.pos_relative_td{
+		 position: relative !important;
+	}
+}
+/* Create landing page */
+.LP_insentric_img{
+	max-height: 200px;
+    max-width: 200px;
+}
+.landing_page_card{
+	display:grid;
+	grid-template-columns: repeat(auto-fit, 233px);
+    grid-gap: 15px;
+}

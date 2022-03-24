@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- Meta links-->
+   <meta charset="utf-8">
+   <meta content="width=device-width, initial-scale=1" name="viewport">
+   <meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+   <meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+   <meta name="author" content="Skill-Lync">
+   <meta name="robot" content="index, follow">
+   <!-- Title -->
+   <title>Sales - CRM Planner</title>
+   <!-- CSS -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/select2.min.css">
+   <link rel="stylesheet" href="css/ionicons.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="css/fullcalendar.min.css" rel="stylesheet">
+   <link href="css/quill.snow.css" rel="stylesheet">
+   <link href="css/spectrum.css" rel="stylesheet">
+   <!-- DashForge CSS -->
+   <link rel="stylesheet" href="css/dashforge.css">
+   <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+   <link rel="stylesheet" href="css/sales_crm.css">
+   <link rel="stylesheet" href="css/sales_planner.css">
+   <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+</head>
+
+<body>
+   <header>
+      <nav class="navbar navbar-header navbar-expand-lg d-none-lg justify-content-between bg-gray-100 ">
+         <div class="navbar-brand">
+            <a class=""><img src="images/crm/footer_logo.png" class="wd-auto ht-20" id="" alt="logo"></a>
+         </div>
+         <!-- navbar-brand -->
+         <div class="navbar-menu-wrapper justify-content-end pd-r-0" id="navbar-content">
+            <div class="nav navbar-menu bd-r hide-nav" id="navbar-menu">
+               <div class="nav-item with-sub sub-menu">
+                  <a class="nav-link drop-icon" href="#" role="button"> Dashboard</a>
+                  <div class="navbar-menu-sub sub-drop">
+                     <div class="nav-sub-item d-flex justify-content-between align-items-center ">
+                        <a href="#" class="nav-sub-link mg-r-10" id="admin">Administrator Dashboard</a>
+                        <div class="d-flex">
+                           <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+                           <a href="#" class="tx-dark"><i class="fa fa-check-circle"></i></a>
+                        </div>
+                     </div>
+                     <div class="mg-b-0 pd-l-5-f pd-10 tx-gray-700 tx-12">MY DASHBOARDS</div>
+                     <div class="nav-sub-item d-flex justify-content-between align-items-center">
+                        <a href="#" class="nav-sub-link" id="admin">Custom sales activity</a>
+                        <div class="d-flex">
+                           <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+                           <a><i class="fa fa-trash-o"></i></a>
+                        </div>
+                     </div>
+                     <div class="nav-sub-item">
+                        <a href="#" class="nav-sub-link"><i class="fa fa-plus mg-r-5"></i> Create New Dashboard</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="nav-item with-sub sub-menu">
+                  <a href="" class="nav-link drop-icon">Content</a>
+                  <div class="navbar-menu-sub sub-drop">
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Library</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Images &#38; Documents</a></div>
+                  </div>
+               </div>
+               <div class="nav-item with-sub sub-menu">
+                  <a href="" class="nav-link drop-icon">Marketing</a>
+                  <div class="navbar-menu-sub  sub-drop">
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Campaigns</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Landing Pages</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Website Widgets</a></div>
+                  </div>
+               </div>
+               <div class="nav-item with-sub sub-menu">
+                  <a href="" class="nav-link drop-icon">Leads</a>
+                  <div class="navbar-menu-sub sub-drop">
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Smart Views</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Leads</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Activities</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Tasks</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Lists</a></div>
+                  </div>
+               </div>
+               <div class="nav-item with-sub sub-menu">
+                  <a href="" class="nav-link drop-icon">Workflow</a>
+                  <div class="navbar-menu-sub sub-drop">
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Automation</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Forms</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Process Designer</a></div>
+                  </div>
+               </div>
+               <div class="nav-item with-sub sub-menu">
+                  <a href="" class="nav-link drop-icon">Apps</a>
+                  <div class="navbar-menu-sub sub-drop">
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Dashlet Builder</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Lead Marketplaces</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Adwords Data Sync</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Facebook Retargeting</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Templates</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Reports</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Kaleyra SMS Template</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">SMS Templates</a></div>
+                  </div>
+               </div>
+               <div class="nav-item with-sub sub-menu">
+                  <a href="" class="nav-link drop-icon">Reports</a>
+                  <div class="navbar-menu-sub sub-drop">
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+                     <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+                  </div>
+                  <!-- nav-sub -->
+               </div>
+            </div>
+         </div>
+         <div class="navbar-right justify-content-end">
+            <div class="dropdown dropdown-profile mg-r-10 nav-right-menu">
+               <a href="" class="dropdown-link nav-right-icon" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/search.png" class="wd-20 ht-20" alt="search">
+               </a><!-- dropdown-link -->
+               <div class="dropdown-menu dropdown-menu-right pd-15-f nav-right-drop">
+                  <div class="input-group">
+                     <input type="text" class="form-control" placeholder="Search Leads" aria-label="button-search-lead"
+                        aria-describedby="button-search-lead">
+                     <div class="input-group-append">
+                        <button class="btn btn-light" type="button" id="button-search-lead"><i
+                              class="fa fa-search"></i></button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="dropdown dropdown-profile mg-r-10 ">
+               <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/question.png" class="wd-20 ht-20" alt="question_Mark">
+               </a><!-- dropdown-link -->
+               <div class="dropdown-menu dropdown-menu-right pd-15-f">
+                  <a href="#" class="dropdown-item nav-right-item">Manage Apps</a>
+                  <a href="#" class="dropdown-item nav-right-item">Apps Marketplace</a>
+                  <a href="#" class="dropdown-item nav-right-item">Connect My Inbox</a>
+               </div>
+            </div>
+            <div class="dropdown dropdown-profile">
+               <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/user.svg" class="img-fluid ht-25" alt="user">
+               </a><!-- dropdown-link -->
+               <div class="dropdown-menu dropdown-menu-right tx-13 pd-15-f">
+                  <a href="#" class="dropdown-item nav-right-item">Sarang V</a>
+                  <a href="#" class="dropdown-item tx-11 nav-right-item">sarang@skill-lync.com</a>
+                  <a href="#" class="dropdown-item nav-right-item">Skill Lync</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item nav-right-item"><i class="fa fa-cogs mg-r-10"></i>Settings</a>
+                  <a href="#" class="dropdown-item nav-right-item"><i class="fa fa-user-plus mg-r-10"></i>Manage
+                     Users</a>
+                  <a href="#" class="dropdown-item nav-right-item"><i class="fa  fa-power-off mg-r-10"></i>Signout</a>
+               </div>
+            </div>
+            <!-- <div class="side-nav-btn"> -->
+            <!-- <i class="fa fa-bars"></i> -->
+            <!-- </div> -->
+         </div>
+         <!-- navbar-right -->
+      </nav>
+      <!-- navbar -->
+   </header>
+   <!-- Navbar Header-->
+   <section class="sal_crm_bg pd-15 sales_crm_sec">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-12 pd-l-20-f pd-y-5">
+               <nav aria-label="breadcrumb bg-transparent-f">
+                  <ol class="breadcrumb breadcrumb-style2 mg-b-0">
+                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                     <li class="breadcrumb-item"><a href="#">Sales Planner</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Add Sales Planner</li>
+                  </ol>
+               </nav>
+            </div>
+         </div>
+         <div class="row justify-content-end pd-r-20">
+            <h6 class="tx-primary tx-medium">Add Sale Planner Details</h6>
+         </div>
+
+         <div class="row sales_panner">
+            <div class="col-md-2 pd-r-0-f">
+               <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#cus_info" role="tab"
+                        aria-controls="home" aria-selected="true">Customer Information</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#sc_sale" role="tab"
+                        aria-controls="profile" aria-selected="false">Skill-Center Sale</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#cou_info" role="tab"
+                        aria-controls="contact" aria-selected="false">Course Information</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#pro_res_pro" role="tab"
+                        aria-controls="profile" aria-selected="false">Project / Research Program</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#quot_info" role="tab"
+                        aria-controls="profile" aria-selected="false">Quotation Information</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#payment_links" role="tab"
+                        aria-controls="profile" aria-selected="false">Genrate Payment Links</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-md-10 pd-l-0-f">
+               <div class="tab-content bd rounded-5 bg-white pd-20-f sales_tab_content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="cus_info" role="tabpanel" aria-labelledby="customer-tab">
+                     <div class="search_customer">
+                        <div class="wd-md-100p">
+                           <label>Search Customer</label>
+                           <select class="form-control select2">
+                              <option label="Search Customer">Type here...</option>
+                              <option value="saravana">Saravana</option>
+                              <option value="sathish">Sathish</option>
+                              <option value="ram">Ram</option>
+                              <option value="vetri">Vetri</option>
+                              <option value="surya">Surya</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="cust_info_container">
+                        <div class="row">
+                           <div class="col-md-4 mg-t-15">
+                              <label>First name <span class="tx-danger">*</span></label>
+                              <input type="text" class="form-control" placeholder="First name">
+                           </div>
+                           <div class="col-md-4 mg-t-15">
+                              <label>Last name <span class="tx-danger">*</span></label>
+                              <input type="text" class="form-control" placeholder="Last name">
+                           </div>
+                           <div class="col-md-4 mg-t-15">
+                              <label>Email <span class="tx-danger">*</span></label>
+                              <input type="text" class="form-control" value="saravana.kumar@skill-lync.com" disabled>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-4 mg-t-15">
+                              <label>Gender</label>
+                              <div>
+                                 <input class="checkbox-tools" type="radio" name="tools" id="tool-1" checked="">
+                                 <label class="for-checkbox-tools" for="tool-1">
+                                    Male
+                                 </label> <input class="checkbox-tools" type="radio" name="tools" id="tool-2">
+                                 <label class="for-checkbox-tools" for="tool-2">
+                                    Female
+                                 </label>
+                              </div>
+                           </div>
+                           <div class="col-md-6 mg-t-15">
+                              <label>Phone number <span class="tx-danger">*</span></label>
+                              <div class="row">
+                                 <div class="col-md-2">
+                                    <select class="form-control wd-70" id="" name="">
+                                       <option selected="">+91</option>
+                                       <option selected="">+938</option>
+                                       <option selected="">+9268</option>
+                                       <option selected="">+1</option>
+                                    </select>
+                                 </div>
+                                 <div class="col-md-10">
+                                    <input type="text" class="form-control" placeholder="Mobile number">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12" id="fields">
+                              <div class="controls">
+                                 <form role="form" autocomplete="off">
+                                    <div class="entry input-group">
+                                       <div class="col-md-5 mg-t-15 pd-l-0">
+                                          <label class="form-control-label">Country <span class="tx-danger">*</span>
+                                          </label>
+                                          <select id="" name="" class="form-control" tabindex="-1" aria-hidden="true">
+                                             <option>Type here...</option>
+                                             <option>India</option>
+                                             <option>UK</option>
+                                             <option>USA</option>
+                                             <option>RSA</option>
+                                             <option>SNG</option>
+                                             <option>NZ</option>
+                                             <option>UAE</option>
+                                             <option>AUS</option>
+                                             <option>CHE</option>
+                                          </select>
+                                       </div>
+                                       <div class="col-md-7 mg-t-15">
+                                          <div class="row">
+                                             <div class="col-md-2">
+                                                <label>code <span class="tx-danger">*</span></label>
+                                                <select class="form-control wd-70" id="" name="">
+                                                   <option selected="">+91</option>
+                                                   <option selected="">+938</option>
+                                                   <option selected="">+9268</option>
+                                                   <option selected="">+1</option>
+                                                </select>
+                                             </div>
+                                             <div class="col-md-8 pd-r-0">
+                                                <label>Mobile <span class="tx-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="Mobile number">
+                                             </div>
+                                             <div class="col-md-2 input-group-btn pd-0  mg-t-20">
+                                                <div class="btn txt_blue btn-add tx-10 tx-left-f"><a
+                                                      href="javascript:void(0)"> <i data-feather="plus-square"></i> add
+                                                      optional</a></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                        <a class="mg-t-15 add_opt tx-10" data-toggle="collapse" href="#add_cus_opt_info" role="button"
+                           aria-expanded="false" aria-controls="add_cus_opt_info"><i data-feather="plus-square"></i> Add
+                           Customer Optional Information</a>
+
+                        <div class="collapse mg-t-5" id="add_cus_opt_info">
+                           <div class="row">
+                              <div class="col-md-4 mg-t-15">
+                                 <label>State</label>
+                                 <select class="form-control select2">
+                                    <option label="State">State</option>
+                                    <option value="saravana">Saravana</option>
+                                    <option value="sathish">Sathish</option>
+                                    <option value="ram">Ram</option>
+                                    <option value="vetri">Vetri</option>
+                                    <option value="surya">Surya</option>
+                                    <option value="tamilnadu">Tamilnadu</option>
+                                 </select>
+                              </div>
+                              <div class="col-md-4 mg-t-15">
+                                 <label>City</label>
+                                 <select class="form-control select2">
+                                    <option label="City">City</option>
+                                    <option value="saravana">Saravana</option>
+                                    <option value="sathish">Sathish</option>
+                                    <option value="ram">Ram</option>
+                                    <option value="vetri">Vetri</option>
+                                    <option value="surya">Surya</option>
+                                 </select>
+                              </div>
+                              <div class="col-md-4 mg-t-15">
+                                 <label>Pincode</label>
+                                 <input type="text" class="form-control" placeholder="Pincode">
+                              </div>
+                              <div class="col-md-6 mg-t-15">
+                                 <label>Address</label>
+                                 <textarea class="form-control" rows="2" placeholder="Textarea"></textarea>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="sc_sale" role="tabpanel" aria-labelledby="skill-cen-tab">
+                     <div>
+                        <div class="col-md-6 pd-0">
+                           <label>Is this a skill center sale? *</label>
+                           <div>
+                              <input class="checkbox-tools" type="radio" name="skill_center_sale" id="scs_no"
+                                 checked="">
+                              <label class="for-checkbox-tools" for="scs_no">
+                                 No
+                              </label> <input class="checkbox-tools" type="radio" name="skill_center_sale" id="scs_yes">
+                              <label class="for-checkbox-tools" for="scs_yes">
+                                 Yes
+                              </label>
+                           </div>
+                        </div>
+                        <div>
+                           <table class="table table-primary table-hover table-striped mg-b-0 sl_c_sale">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">City</th>
+                                    <th scope="col">Program</th>
+                                    <th scope="col">Plan Name</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Seats Available</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <th scope="row">Chennai</th>
+                                    <td>Adrian Monino</td>
+                                    <td>Flexible</td>
+                                    <td>11.04.2021</td>
+                                    <td>12</td>
+                                 </tr>
+                                 <tr>
+                                    <th scope="row">Coimbatore</th>
+                                    <td>Socrates Itumay</td>
+                                    <td>Pro</td>
+                                    <td>03.07.2021 </td>
+                                    <td>15</td>
+                                 </tr>
+                                 <tr>
+                                    <th scope="row">Madurai</th>
+                                    <td>Reynante Labares</td>
+                                    <td>Premium</td>
+                                    <td>20.04.2021</td>
+                                    <td>25</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="cou_info" role="tabpanel" aria-labelledby="course-tab">
+                     <div>
+                        <div class="col-md-6">
+                           <label>Type Of Sales</label>
+                           <div>
+                              <input class="checkbox-tools" type="radio" name="ci_type_of_sales" id="ciindiv_cour"
+                                 checked="">
+                              <label class="for-checkbox-tools" for="ciindiv_cour">
+                                 Individual Courses
+                              </label> <input class="checkbox-tools" type="radio" name="ci_type_of_sales"
+                                 id="cicareer_prog">
+                              <label class="for-checkbox-tools" for="cicareer_prog">
+                                 Career Program
+                              </label>
+                           </div>
+
+                        </div>
+                        <div class="ci_indiv_cour">
+                           <div class="col-md-12">
+                              <label>Individual Courses</label>
+                              <select class="form-control select2">
+                                 <option value="0">Select the course...</option>
+                                 <option value="1">MATLAB for Mechanical Engineers</option>
+                                 <option value="2">Computational Combustion using Python and Cantera</option>
+                                 <option value="3">Surface Modelling of an Aston Martin Car using SolidWorks</option>
+                                 <option value="4">Introduction to Hybrid Electric Vehicle using MATLAB and Simulink
+                                 </option>
+                                 <option value="5">Surface Modelling of an Aston Martin Car using SolidWorks Electrical
+                                 </option>
+                                 <option value="6">Introduction to Software Engineering</option>
+                              </select>
+                           </div>
+                           <div class="col-md-12 mg-t-15">
+                              <table class="table table-primary table-hover table-striped mg-b-0 table_cus">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col" colspan="3">Selected Courses</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td scope="row">Surface Modelling of an Aston Martin Car using SolidWorks
+                                          Electrical </td>
+                                       <td class="row">
+
+                                          <select class="form-control ht-30 pd-5 indplan_3 wd-100" name="indplan"
+                                             id="indplan">
+                                             <option id="" value="1">Basic</option>
+                                             <option id="" value="2">Pro</option>
+                                             <option id="" value="3">Premium</option>
+                                             <option id="" value="5">Default</option>
+                                          </select>
+                                          <span class="icon_svg_eye mg-t-10"  data-toggle="modal" data-target="#plan_features_cr_ind"><i data-feather="eye"></i></span>
+                                       </td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Computational Combustion using Python and Cantera</td>
+                                       <td class="row">
+                                          <select class="form-control ht-30 pd-5 indplan_3 wd-100" name="indplan"
+                                             id="indplan">
+                                             <option id="" value="1">Basic</option>
+                                             <option id="" value="2">Pro</option>
+                                             <option id="" value="3">Premium</option>
+                                             <option id="" value="5">Default</option>
+                                          </select>
+                                          <span class="icon_svg_eye mg-t-10"><i data-feather="eye"></i></span>
+                                       </td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Advanced CFD for IC Engine Applications using CONVERGE</td>
+                                       <td class="row">
+                                          <select class="form-control ht-30 pd-5 indplan_3 wd-100" name="indplan"
+                                             id="indplan">
+                                             <option id="" value="1">Basic</option>
+                                             <option id="" value="2">Pro</option>
+                                             <option id="" value="3">Premium</option>
+                                             <option id="" value="5">Default</option>
+                                          </select>
+                                          <span class="icon_svg_eye mg-t-10"><i data-feather="eye"></i></span>
+                                       </td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="col-md-12 mg-y-20">
+                              <h6 class="tx-primary tx-medium">Total Courses : <span>3</span> </h6>
+                           </div>
+
+                           <div class="modal fade select-modal-parent show" id="plan_features_cr_ind"
+                           role="dialog" aria-labelledby="plan_features_cr_ind">
+                           <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+
+                                 <div class="modal-header">
+                                    <h5 class="modal-title">PLAN FEATURES</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">×</span>
+                                    </button>
+                                 </div>
+
+                                 <div class="modal-body">
+                                    <table class="table table-bordered table-primary">
+
+                                       <tr>
+                                          <td scope="col">Access Duration</td>
+                                          <td scope="col">2 Months</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Mode of Delivery</td>
+                                          <td scope="col">Online</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Project Portfolio</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Certification</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Individual Video Support</td>
+                                          <td scope="col">4/Month</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Group Video Support</td>
+                                          <td scope="col">4/Month</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Email Support</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Forum Support</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Access Duration</td>
+                                          <td scope="col">6 Months</td>
+                                       </tr>
+
+                                    </table>
+                                 </div>
+
+                              </div>
+                           </div>
+                        </div>
+
+                        </div>
+
+                        <div class="ci_mast_cour">
+                           <div class="col-md-12 row">
+                              <div class="col-md-7">
+                                 <label>Carrer Program</label>
+                                 <select class="form-control select2">
+                                    <option value="0">Select the course...</option>
+                                    <option value="1">MATLAB for Mechanical Engineers</option>
+                                    <option value="2">Computational Combustion using Python and Cantera</option>
+                                    <option value="3">Surface Modelling of an Aston Martin Car using SolidWorks</option>
+                                    <option value="4">Introduction to Hybrid Electric Vehicle using MATLAB and Simulink
+                                    </option>
+                                    <option value="5">Surface Modelling of an Aston Martin Car using SolidWorks
+                                       Electrical</option>
+                                    <option value="6">Introduction to Software Engineering</option>
+                                 </select>
+
+                              </div>
+                              <div class="col-md-5">
+                                 <label>Plan</label>
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <input class="checkbox-tools" type="radio" name="plan" id="plan_basic" checked="">
+                                    <label class="for-checkbox-tools" for="plan_basic">
+                                       Basic
+                                    </label> <input class="checkbox-tools" type="radio" name="plan" id="plan_pro">
+                                    <label class="for-checkbox-tools" for="plan_pro">
+                                       Pro
+                                    </label>
+                                    <input class="checkbox-tools" type="radio" name="plan" id="plan_premium">
+                                    <label class="for-checkbox-tools" for="plan_premium">
+                                       Premium
+                                    </label>
+                                    <input class="checkbox-tools" type="radio" name="plan" id="plan_default">
+                                    <label class="for-checkbox-tools" for="plan_default">
+                                       default
+                                    </label>
+                                    <span class="txt_blue" data-toggle="modal" data-target="#plan_features_new"><i
+                                          data-feather="eye"></i></span>
+                                 </div>
+                              </div>
+                              <div class="modal fade select-modal-parent show" id="plan_features_new" tabindex="-1"
+                                 role="dialog" aria-labelledby="plan_features_new">
+                                 <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+
+                                       <div class="modal-header">
+                                          <h5 class="modal-title">PLAN FEATURES</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                             <span aria-hidden="true">×</span>
+                                          </button>
+                                       </div>
+
+                                       <div class="modal-body">
+                                          <table class="table table-bordered table-primary">
+
+                                             <tr>
+                                                <td scope="col">Access Duration</td>
+                                                <td scope="col">6 Months</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Mode of Delivery</td>
+                                                <td scope="col">Online</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Project Portfolio</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Certification</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Individual Video Support</td>
+                                                <td scope="col">4/Month</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Group Video Support</td>
+                                                <td scope="col">4/Month</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Email Support</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Forum Support</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Access Duration</td>
+                                                <td scope="col">6 Months</td>
+                                             </tr>
+
+                                          </table>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-12 mg-t-15">
+                              <table class="table table-primary table-hover table-striped mg-b-0 table_cus">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col" colspan="2">Selected Courses</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td scope="row">Introduction to CFD using MATLAB and OpenFOAM</td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Computational Combustion using Python and Cantera</td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Advanced CFD for IC Engine Applications using CONVERGE</td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Introduction to Structural Analysis using ANSYS Workbench</td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="col-md-12 mg-y-20">
+                              <h6 class="tx-primary tx-medium">Total Courses : <span>4</span> </h6>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="pro_res_pro" role="tabpanel" aria-labelledby="pro-rese-tab">
+                     <div>
+                        <div class="col-md-6">
+                           <label>Type Of Sales</label>
+                           <div>
+                              <input class="checkbox-tools" type="radio" name="type_of_sales_res" id="pro_indiv_cour"
+                                 checked="">
+                              <label class="for-checkbox-tools" for="pro_indiv_cour">
+                                 Individual Projects
+                              </label> <input class="checkbox-tools" type="radio" name="type_of_sales_res" id="pro_career_prog">
+                              <label class="for-checkbox-tools" for="pro_career_prog">
+                                 Career Projects
+                              </label>
+                           </div>
+                        </div>
+                        <div class="pro_res_ind">
+                           <div class="col-md-12">
+                              <label>Individual Projects</label>
+                              <select class="form-control select2">
+                                 <option>Search here...</option>
+                                 <option value="1">MATLAB for Mechanical Engineers</option>
+                                 <option value="2">Computational Combustion using Python and Cantera</option>
+                                 <option value="3">Surface Modelling of an Aston Martin Car using SolidWorks</option>
+                                 <option value="4">Introduction to Hybrid Electric Vehicle using MATLAB and Simulink
+                                 </option>
+
+                              </select>
+                           </div>
+
+                           <div class="col-md-12 mg-t-15">
+                              <table class="table table-primary table-hover table-striped mg-b-0 table_cus">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col" colspan="3">Selected Courses</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td scope="row">Surface Modelling of an Aston Martin Car using SolidWorks
+                                          Electrical </td>
+                                       <td class="row">
+                                          <select class="form-control ht-30 pd-5 indplan_3 wd-100" name="indplan"
+                                             id="indplan">
+                                             <option id="" value="1">Basic</option>
+                                             <option id="" value="2">Pro</option>
+                                             <option id="" value="3">Premium</option>
+                                             <option id="" value="5">Default</option>
+                                          </select>
+                                          <span class="icon_svg_eye mg-t-10"  data-toggle="modal" data-target="#pro_res_ind_plan"><i data-feather="eye"></i></span>
+                                       </td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Computational Combustion using Python and Cantera</td>
+                                       <td class="row">
+                                          <select class="form-control ht-30 pd-5 indplan_3 wd-100" name="indplan"
+                                             id="indplan">
+                                             <option id="" value="1">Basic</option>
+                                             <option id="" value="2">Pro</option>
+                                             <option id="" value="3">Premium</option>
+                                             <option id="" value="5">Default</option>
+                                          </select>
+                                          <span class="icon_svg_eye mg-t-10"><i data-feather="eye"></i></span>
+                                       </td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Advanced CFD for IC Engine Applications using CONVERGE</td>
+                                       <td class="row">
+                                          <select class="form-control ht-30 pd-5 indplan_3 wd-100" name="indplan"
+                                             id="indplan">
+                                             <option id="" value="1">Basic</option>
+                                             <option id="" value="2">Pro</option>
+                                             <option id="" value="3">Premium</option>
+                                             <option id="" value="5">Default</option>
+                                          </select>
+                                          <span class="icon_svg_eye mg-t-10"><i data-feather="eye"></i></span>
+                                       </td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="col-md-12 mg-y-20">
+                              <h6 class="tx-primary tx-medium">Total Courses : <span>3</span> </h6>
+                           </div>
+
+                           <div class="modal fade select-modal-parent show" id="pro_res_ind_plan"
+                           role="dialog" aria-labelledby="pro_res_ind_plan">
+                           <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+
+                                 <div class="modal-header">
+                                    <h5 class="modal-title">PLAN FEATURES</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">×</span>
+                                    </button>
+                                 </div>
+
+                                 <div class="modal-body">
+                                    <table class="table table-bordered table-primary">
+
+                                       <tr>
+                                          <td scope="col">Access Duration</td>
+                                          <td scope="col">2 Months</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Mode of Delivery</td>
+                                          <td scope="col">Online</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Project Portfolio</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Certification</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Individual Video Support</td>
+                                          <td scope="col">4/Month</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Group Video Support</td>
+                                          <td scope="col">4/Month</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Email Support</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Forum Support</td>
+                                          <td scope="col">Available</td>
+                                       </tr>
+                                       <tr>
+                                          <td scope="col">Access Duration</td>
+                                          <td scope="col">6 Months</td>
+                                       </tr>
+
+                                    </table>
+                                 </div>
+
+                              </div>
+                           </div>
+                        </div>
+
+                        </div>
+
+                        <div class="pro_res_carr">
+                           <div class="col-md-12 mg-t-15 row">
+                              <div class="col-md-7">
+                                 <label>Carrer Projects</label>
+                                 <select class="form-control select2">
+                                    <option>Search here...</option>
+                                    <option value="1">MATLAB for Mechanical Engineers</option>
+                                    <option value="2">Computational Combustion using Python and Cantera</option>
+                                    <option value="3">Surface Modelling of an Aston Martin Car using SolidWorks</option>
+                                    <option value="4">Introduction to Hybrid Electric Vehicle using MATLAB and Simulink
+                                    </option>
+                                 </select>
+                              </div>
+                              <div class="col-md-5">
+                                 <label>Plan</label>
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <input class="checkbox-tools" type="radio" name="plan" id="plan_basic3" checked="">
+                                    <label class="for-checkbox-tools" for="plan_basic3">
+                                       Basic
+                                    </label> <input class="checkbox-tools" type="radio" name="plan" id="plan_pro3">
+                                    <label class="for-checkbox-tools" for="plan_pro3">
+                                       Pro
+                                    </label>
+                                    <input class="checkbox-tools" type="radio" name="plan" id="plan_premium3">
+                                    <label class="for-checkbox-tools" for="plan_premium3">
+                                       Premium
+                                    </label>
+                                    <input class="checkbox-tools" type="radio" name="plan" id="plan_default3">
+                                    <label class="for-checkbox-tools" for="plan_default3">
+                                       default
+                                    </label>
+                                    <span class="txt_blue" data-toggle="modal" data-target="#pro_res_carr_plan"><i
+                                          data-feather="eye"></i></span>
+                                 </div>
+                              </div>
+                              <div class="modal fade select-modal-parent show" id="pro_res_carr_plan"
+                                 role="dialog" aria-labelledby="pro_res_carr_plan">
+                                 <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+
+                                       <div class="modal-header">
+                                          <h5 class="modal-title">PLAN FEATURES</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                             <span aria-hidden="true">×</span>
+                                          </button>
+                                       </div>
+
+                                       <div class="modal-body">
+                                          <table class="table table-bordered table-primary">
+
+                                             <tr>
+                                                <td scope="col">Access Duration</td>
+                                                <td scope="col">6 Months</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Mode of Delivery</td>
+                                                <td scope="col">Online</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Project Portfolio</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Certification</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Individual Video Support</td>
+                                                <td scope="col">4/Month</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Group Video Support</td>
+                                                <td scope="col">4/Month</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Email Support</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Forum Support</td>
+                                                <td scope="col">Available</td>
+                                             </tr>
+                                             <tr>
+                                                <td scope="col">Access Duration</td>
+                                                <td scope="col">6 Months</td>
+                                             </tr>
+
+                                          </table>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-12 mg-t-15">
+                              <table class="table table-primary table-hover table-striped mg-b-0 table_cus">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col" colspan="2">Selected Projects</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td scope="row">Introduction to CFD using MATLAB and OpenFOAM</td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Computational Combustion using Python and Cantera</td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                       <td scope="row">Advanced CFD for IC Engine Applications using CONVERGE</td>
+                                       <td><span class="icon_svg_trash"><i data-feather="trash-2"></i></span></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="col-md-12 mg-y-20">
+                              <h6 class="tx-primary tx-medium">Total Courses : <span>3</span> </h6>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="quot_info" role="tabpanel" aria-labelledby="quotation-tab">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <label>Does this customer need laptop?</label>
+                           <div>
+                              <input class="checkbox-tools" type="radio" name="need_laptop" id="need_laptop_no"
+                                 checked="">
+                              <label class="for-checkbox-tools" for="need_laptop_no">
+                                 No
+                              </label> <input class="checkbox-tools" type="radio" name="need_laptop"
+                                 id="need_laptop_yes">
+                              <label class="for-checkbox-tools" for="need_laptop_yes">
+                                 Yes
+                              </label>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <label>Purchase Type</label>
+                           <div>
+                              <input class="checkbox-tools" type="radio" name="purchase_type" id="purchase_domestic"
+                                 checked="">
+                              <label class="for-checkbox-tools" for="purchase_domestic">
+                                 Domestic
+                              </label> <input class="checkbox-tools" type="radio" name="purchase_type"
+                                 id="purchase_international">
+                              <label class="for-checkbox-tools" for="purchase_international">
+                                 international
+                              </label>
+                              <input class="checkbox-tools" type="radio" name="purchase_type" id="purchase_b2b">
+                              <label class="for-checkbox-tools" for="purchase_b2b">
+                                 B2B
+                              </label>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <label>Does this customer has internship offer?</label>
+                           <div>
+                              <input class="checkbox-tools" type="radio" name="internship" id="intern_no" checked="">
+                              <label class="for-checkbox-tools" for="intern_no">
+                                 No
+                              </label> <input class="checkbox-tools" type="radio" name="internship" id="intern_paid">
+                              <label class="for-checkbox-tools" for="intern_paid">
+                                 Paid
+                              </label>
+                              <input class="checkbox-tools" type="radio" name="internship" id="intern_free">
+                              <label class="for-checkbox-tools" for="intern_free">
+                                 Free
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4 mg-t-15">
+                           <label>Currency <span class="tx-danger">*</span></label>
+                           <select class="form-control select2">
+                              <option value="USD" id="USD">US Dollar - USD</option>
+                              <option value="CAD" id="CAD">Canadian Dollar - CAD</option>
+                              <option value="EUR" id="EUR">Euro - EUR</option>
+                              <option value="AED" id="AED">United Arab Emirates Dirham - AED</option>
+                              <option value="ALL" id="ALL">Albanian Lek - ALL</option>
+                              <option value="AMD" id="AMD">Armenian Dram - AMD</option>
+                              <option value="ARS" id="ARS">Argentine Peso - ARS</option>
+                              <option value="AUD" id="AUD">Australian Dollar - AUD</option>
+                              <option value="BDT" id="BDT">Bangladeshi Taka - BDT</option>
+                           </select>
+                        </div>
+                        <div class="col-md-4 mg-t-15">
+                           <label>Course and/or project price <span class="tx-danger">*</span></label>
+                           <input type="text" class="form-control" value="1500" disabled>
+                        </div>
+                        <div class="col-md-4 mg-t-15">
+                           <label>Discount(%) <span class="tx-danger">*</span></label>
+                           <input type="text" class="form-control" value="0">
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4 mg-t-15">
+                           <label>What price are you selling for (in INR)? <span class="tx-danger">*</span></label>
+                           <input type="text" class="form-control" value="0">
+                        </div>
+                        <div class="col-md-4 mg-t-15">
+                           <label>Currency Value (in INR)? <span class="tx-danger">*</span></label>
+                           <input type="text" class="form-control" value="0">
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-8  mg-t-15">
+                           <label>Sales Note <span class="tx-danger">*</span></label>
+                           <input type="text" class="form-control" value="">
+                        </div>
+                     </div>
+
+                     <div class="col-md-12 mg-y-25 pd-0-f">
+                        <h6 class="tx-primary tx-medium" data-toggle="modal" data-target="#add_payment_info">+ Add
+                           Payment Info</h6>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="payment_links" role="tabpanel" aria-labelledby="payment-tab">
+
+                     <h6 class="tx-primary tx-medium">Quotation Last Update Date & Time: <Span>19 Feb 2022 05.00.07
+                           PM</Span></h6>
+
+                     <div class="row justify-content-end pd-15">
+                        <div class="tx-danger">Click to see table in "INR"</div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <table class="table table-primary table-hover table-striped mg-b-0 gen_payment_link">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Due Date</th>
+                                    <th scope="col">Amount(INR)</th>
+                                    <th scope="col">Upfront Amount(INR)</th>
+                                    <th scope="col">Installments</th>
+                                    <th scope="col">Interval (days)</th>
+                                    <th scope="col">Gateway</th>
+                                    <th scope="col">Prebook</th>
+                                    <th scope="col">Paymentlink</th>
+                                    <th scope="col">Pay Status</th>
+                                    <th scope="col">Created Time</th>
+                                    <th scope="col">Email</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td scope="row">1</td>
+                                    <td scope="row">19 Feb 2022</td>
+                                    <td scope="row">5000</td>
+                                    <td scope="row">0</td>
+                                    <td scope="row">1</td>
+                                    <td scope="row">1</td>
+                                    <td scope="row">Razorpay</td>
+                                    <td scope="row">No</td>
+                                    <td scope="row">5orzj</td>
+                                    <td scope="row"><b>No</b></td>
+                                    <td scope="row"><b>19 Feb 2022 05.04.37 PM</b></td>
+                                    <td scope="row"><button
+                                          class="btn btn-dark alert-padd dropdown-toggle">Action</button></td>
+                                 </tr>
+                                 <tr>
+                                    <td scope="row">2</td>
+                                    <td scope="row">01 Apr 2022</td>
+                                    <td scope="row">175000</td>
+                                    <td scope="row">0</td>
+                                    <td scope="row">1</td>
+                                    <td scope="row">1</td>
+                                    <td scope="row">Loan</td>
+                                    <td scope="row">No</td>
+                                    <td scope="row">qwer</td>
+                                    <td scope="row"><b>No</b></td>
+                                    <td scope="row"><b>19 Feb 2022 06.17.03 PM</b></td>
+                                    <td scope="row"><button
+                                          class="btn btn-dark alert-padd dropdown-toggle">Action</button></td>
+                                 </tr>
+
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="pd-15">
+                           <button class="btn btn-primary">Generate payment links to all payments</button>
+                        </div>
+                     </div>
+
+                  </div>
+                  <div class="modal fade select-modal-parent show" id="add_payment_info" tabindex="-1" role="dialog"
+                     aria-labelledby="add_payment_info">
+                     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                           <div class="modal-header bd-0">
+                              <h4 class="modal-title">Quotation Details</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                 <span aria-hidden="true">×</span>
+                              </button>
+                           </div>
+
+                           <div class="modal-body pd-b-0">
+                              <form>
+                                 <div class="form-group wd-100p">
+                                    <label>Total Amount (INR)<span class="tx-danger"> *</span></label>
+                                    <input type="text" class="form-control" name="failedcall_followup" required="">
+                                 </div>
+                                 <div class="form-group wd-100p">
+                                    <label>Currency Value (INR)<span class="tx-danger"> *</span></label>
+                                    <input type="text" class="form-control" name="busycall_followup" required="">
+                                 </div>
+
+                                 <div class="form-group wd-100p">
+                                    <label>Payment Gateway?<span class="tx-danger">*</span></label>
+                                    <select class="form-control" id="" name="gateway" required="">
+                                       <option value="">--Select--</option>
+                                       <option id="raz" value="Razorpay">Razorpay</option>
+                                       <option id="paypal" value="Paypal">Paypal</option>
+                                       <option id="cash" value="Cash">Cash</option>
+                                       <option id="cheque" value="Cheque">Cheque</option>
+                                       <option id="cheque" value="Loan">Loan</option>
+                                       <option id="NEFT" value="NEFT">NEFT</option>
+                                       <option id="IMPS" value="IMPS">IMPS</option>
+                                       <option id="RTGS" value="RTGS">RTGS</option>
+                                       <option id="UPI" value="UPI">UPI</option>
+                                       <option value="Razorpay Subscription">Razorpay Subscription</option>
+                                       <option value="Paypal Subscription">Paypal Subscription</option>
+                                    </select>
+                                 </div>
+                                 <div class="form-group wd-100p">
+                                    <label for="inputPassword4">Does this Customer Want Prebook?<span class="tx-danger">
+                                          *</span> (You will not be able to change this)</label>
+                                    <select class="form-control model-inputdrop" id="prebook" name="prebook"
+                                       required="">
+                                       <option value="">--Select--</option>
+                                       <option value="NO">Customer need course access immediately</option>
+                                       <option value="YES">Customer need course access after paying the second payment
+                                       </option>
+                                    </select>
+                                 </div>
+
+                                 <div class="form-group wd-100p" id="">
+                                    <label class="form-control-label">No Of Installments <span class="tx-danger">
+                                          *</span></label>
+                                    <select class="form-control model-inputdrop" id="noofins" name="noofins"
+                                       required="">
+                                       <option value="">--Select--</option>
+                                       <option value="1">1</option>
+                                       <option value="2">2</option>
+                                       <option value="3">3</option>
+                                       <option value="4">4</option>
+                                       <option value="5">5</option>
+                                       <option value="6">6</option>
+                                       <option value="7">7</option>
+                                       <option value="8">8</option>
+                                    </select>
+
+                                 </div>
+
+                                 <div class="form-group wd-100p" id="">
+                                    <label class="form-control-label">Interval (in days) <span class="tx-danger">
+                                          *</span></label>
+                                    <span id="insintervalspan"><input class="form-control model-inputtxt"
+                                          id="insinterval" name="insinterval" type="text" value=""
+                                          onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"
+                                          autocomplete="off" required=""></span>
+                                 </div>
+
+                              </form>
+                           </div>
+                           <div class="modal-footer bd-0 pd-10">
+                              <button type="button" class="btn btn-primary btn-xs rounded-0"
+                                 data-dismiss="modal">Add</button>
+                              <button type="submit" class="btn btn-danger btn-xs rounded-0">Cancel</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="inserterror" class="mg-t-5 pl-0 pr-0 lh-1">
+            <span class="badge badge-pill badge-danger mg-r-2 bg-red-alert alert-padd">The First Name field is
+               required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 bg-red-alert alert-padd">The Last Name field is
+               required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 bg-red-alert alert-padd">The Mobile field is
+               required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">The Email field is
+               required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">The Sal Note field is
+               required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">The Skill Centers
+               field is required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">The Internship field
+               is required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">The Purchase Type
+               field is required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">The customer need
+               laptop field is required.</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">Course or project
+               field is required</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">Course and/or project
+               price should be greater than 0</span>
+            <span class="badge badge-pill badge-danger mg-r-2 alert-padd bg-red-alert alert-padd">Payments should not be
+               empty</span>
+         </div>
+         <!-- <div class="row pd-0 offset-3"> 
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">The First Name field is required.</div></div>   
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">The Last Name field is required.</div></div>
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">The Mobile field is required.</div></div>
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">The Email field is required.</div></div>
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">The Internship field is required.</div></div>
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">Payments should not be empty.</div></div>
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">The Skill Centers field is required.</div></div>
+            <div class="col-md-2 pd-10"> <div class="alert alert-outline-cus" role="alert">Course and/or project price should be greater than 0</div></div>
+         </div> -->
+         <div class="row mg-y-5 pd-r-15 justify-content-end">
+            <button type="button" class="btn btn-primary alert-padd mg-r-15 tx-14">Cancel</button>
+            <button type="button" class="btn btn-success alert-padd  tx-14">Save</button>
+         </div>
+      </div>
+   </section>
+   <footer>
+      <div class="container-fluid bg-gray-100 fixed-bottom">
+         <div class="row row-xs">
+            <div class="col-md-12 pd-x-15 pd-y-10">
+               <ul class=" customer-li pd-l-0 mg-b-0 tx-10">
+                  <li class="d-inline">
+                     <a href="#" class="tx-dark footer-a" id="">&#169; 2022 Skill Lync Inc. All Rights Reserved</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- JS -->
+   </footer>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/common.js"></script>
+   <script src="js/jquery-ui.min.js"></script>
+   <script src="js/select2.min.js"></script>
+   <script src="js/jquery-clockpicker.min.js"></script>
+   <script src="js/feather.min.js"></script>
+   <script src="js/quill.js"></script>
+   <script src="js/typeahead.jquery.min.js"></script>
+   <script src="js/spectrum.js"></script>
+   <script src="js/dashforge.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery.steps.min.js"></script>
+   <script src="js/jquery-clockpicker.min.js"></script>
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <script>
+      $(document).ready(function () {
+         $("#scs_no").click(function () {
+            $(".sl_c_sale").hide();
+         });
+         $("#scs_yes").click(function () {
+            $(".sl_c_sale").show();
+         });
+
+         $("#ciindiv_cour").click(function () {
+            $(".ci_indiv_cour").show();
+            $(".ci_mast_cour").hide();
+         });
+
+         $("#cicareer_prog").click(function () {
+            $(".ci_mast_cour").show();
+            $(".ci_indiv_cour").hide();
+         });
+
+         $("#pro_indiv_cour").click(function () {
+            $(".pro_res_ind").show();
+            $(".pro_res_carr").hide();
+         });
+
+         $("#pro_career_prog").click(function () {
+            $(".pro_res_carr").show();
+            $(".pro_res_ind").hide();
+         });
+
+      });
+
+
+
+
+      feather.replace();
+      $('#accordion').accordion({
+         heightStyle: 'content',
+         collapsible: true
+      });
+
+      $(function () {
+         'use strict'
+
+         // Basic with search
+         $('.select2').select2({
+            placeholder: 'Choose one',
+            searchInputPlaceholder: 'Search options'
+         });
+
+         $(function () {
+            $(document).on('click', '.btn-add', function (e) {
+               e.preventDefault();
+
+               var controlForm = $('.controls form:first'),
+                  currentEntry = $(this).parents('.entry:first'),
+                  newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+               newEntry.find('input').val('');
+               controlForm.find('.entry:not(:last) .btn-add')
+                  .removeClass('btn-add').addClass('btn-remove')
+                  .removeClass('btn-success').addClass('btn-danger1')
+                  .html('<i class="fa fa-trash-o add_remove_ico"></i> Remove');
+            }).on('click', '.btn-remove', function (e) {
+               $(this).parents('.entry:first').remove();
+
+               e.preventDefault();
+               return false;
+            });
+         });
+
+      });
+      feather.replace();
+   </script>
+
+</body>
+
+</html>

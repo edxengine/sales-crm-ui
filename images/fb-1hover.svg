@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-Custom_Size_3">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_3" data-name="Custom Size – 3" clip-path="url(#clip-Custom_Size_3)">
+    <rect width="32" height="32" fill="#1778f2"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(1.992 2.219)">
+      <path id="Path_1" data-name="Path 1" d="M20.906.006,17.328,0c-4.021,0-6.619,2.662-6.619,6.784V9.91H7.11a.563.563,0,0,0-.563.563V15a.562.562,0,0,0,.563.562h3.6V27a.562.562,0,0,0,.563.562h4.695A.562.562,0,0,0,16.529,27V15.566h4.207A.562.562,0,0,0,21.3,15l0-4.532a.564.564,0,0,0-.563-.563H16.529V7.259c0-1.274.3-1.921,1.966-1.921h2.411a.563.563,0,0,0,.563-.563V.568A.563.563,0,0,0,20.906.006Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ikon / placement</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="51.8714075%" y2="77.1936928%" id="linearGradient-1">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#0D55CF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#0D55CF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="ikon-/-placement" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="200" height="200"></rect>
+        <g id="Group-8" transform="translate(8.000000, 15.000000)">
+            <rect id="Rectangle" fill="#D8D8D8" x="0" y="87.5722656" width="110" height="83"></rect>
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="126" y="46.5722656" width="59" height="121"></rect>
+            <polygon id="Path-8" fill="#D8D8D8" points="55.1322235 87.5722656 126 45.9826161 51 0.572265625"></polygon>
+            <polygon id="Path-8" fill="url(#linearGradient-2)" points="49.1322235 87.5722656 120 45.9826161 45 0.572265625"></polygon>
+        </g>
+    </g>
+</svg>

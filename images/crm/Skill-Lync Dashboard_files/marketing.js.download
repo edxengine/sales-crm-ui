@@ -1,0 +1,512 @@
+//Create Email Campaign Page
+	
+$(document).ready(function(){
+	$('.change_success').click(function(){
+			var temp_id = ($(this).data('temp-id'));
+			var temp_type = ($(this).data('temp-type'));
+			$('#template_id').val(temp_id);
+			$('#template_type').val(temp_type);
+			$('.change_success').removeClass('tx-success');
+			$('.change_success').addClass('tx-gray-500');
+			$(this).removeClass('tx-gray-500');
+			$(this).addClass('tx-success');
+		});
+	
+		$(function (){
+		'use script'
+			var fa_circle = $('.fa-check-circle');
+			$('.hidden_icons_table').hover(function(){
+				
+				$(this).find(fa_circle).toggleClass('select_btn');
+			});
+			
+			$('.hidden_icons_table').click(function(){
+				
+				$('.hidden_icons_table').removeClass('bg-primary tx-white');
+				$('.hidden_icons_table').addClass('tx-dark');
+				$(this).removeClass('tx-dark');
+				$(this).addClass('bg-primary tx-white');
+				
+				$(this).find(fa_circle).addClass('tx-success');
+			});
+		
+			var quill = new Quill('#campaign_container_1', {
+			  modules: {
+				toolbar: '#campaign_tool_1'
+			  },
+			  placeholder: 'Compose an epic...',
+			  theme: 'snow'
+			});
+			
+			var quill = new Quill('#common_container', {
+			  modules: {
+				toolbar: '#common_editor'
+			  },
+			  placeholder: 'Compose an epic...',
+			  theme: 'snow'
+			});
+			
+			var quill = new Quill('#common_campagin_editor', {
+			  modules: {
+				toolbar: '#common_campagin_toolbar'
+			  },
+			  placeholder: 'Compose an epic...',
+			  theme: 'snow'
+			});
+		});
+		
+		//step2 right side btn 
+		
+		
+		
+		$('.hide_all_btn_blocks').click(function(){
+		$('.hideAllBtns').children().toggle();
+		$('.hide_search_form').toggle();
+		$('#no_hide').show();
+		$('#no_hide2').show();
+		$(this).text(function(bef, aft){
+			return aft === 'Hide All Fields' ? "Show All Fields" : 'Hide All Fields'
+			});
+		});
+		
+		$(".lead_forms_dropdown").change(function(){
+				$(this).find("option:selected").each(function(){
+					var optionValue = $(this).attr("value");
+					if(optionValue){
+						$(".content_col").not("." + optionValue).hide();
+						$("." + optionValue).show();
+						console.log('working')
+					} else{
+						$(".content_col").hide();
+					}
+				});
+			}).change();
+		$(function (){
+			'use strict'
+			var substringMatcher = function(strs) {
+			return function findMatches(q, cb) {
+			  var matches, substrRegex;
+			  matches = [];
+			  substrRegex = new RegExp(q, 'i');
+			  $.each(strs, function(i, str) {
+				if (substrRegex.test(str)) {
+				  matches.push(str);
+				}
+			  });
+			  cb(matches);
+			};
+			};
+			var fields = ['Additional details', 'Address 2', 'Age', 'C1 First installment Amount', 'C1 First Installment Due Date'
+			];
+			$('.search_fields').typeahead({
+			hint: true,
+			highlight: true,
+			minLength: 1
+			},
+			{
+			name: 'fields',
+			source: substringMatcher(fields)
+			});
+		})
+	
+	$('.resulted_select').on('change', function(){
+		$('.resulted_options').html($(this).val());
+	});
+	$(function (){
+		'use strict'
+		
+		var recipent_list = $('.add_recipient_list');
+		$(recipent_list).click(function(event){
+			$('.append_recipient_list').append('<form class=""><div class="form-group row align-items-center "><div class="col-4 "><select class="custom-select  resulted_select"><option value="Starred Leads">Starred Leads</option><option value="All Leads">All Leads</option><option value="3D Printing Workshop">3D Printing Workshop</option></select></div><div class="col-8"><div class="d-flex justify-content-between"><a class="resulted_options" href="<?php echo base_url(); ?>dashboard/list_details" target="_blank"> Starred Leads</a><a href="javascript:void(0)" class="tx-danger close_options tx-22">&times;</a></div></div></div></form>');
+			event.preventDefault();
+		});
+
+	
+		$(recipent_list).on("click",".close_options", function(e){
+			   
+			e.preventDefault(); 
+			$(this).closest('form').remove();  
+				
+		});
+	})
+	
+	
+	$('.resulted_select_suppression').on('change', function(){
+		$('.resulted_option_suppression').html($(this).val());
+	});
+	
+	$(function (){
+		'use strict'
+		
+		var recipent_list_supp = $('.add_recipient_list_supp');
+		$(recipent_list_supp).click(function(event){
+			$('.append_recipient_list').append('<div class="remove_form"><form class=""><div class="form-group row align-items-center "><div class="col-4 "><select class="custom-select  resulted_select_suppression"><option value="Starred Leads">Starred Leads</option><option value="All Leads">All Leads</option><option value="3D Printing Workshop">3D Printing Workshop</option></select></div><div class="col-8"><div class="d-flex justify-content-between"><a class="resulted_option_suppression" href="<?php echo base_url(); ?>dashboard/list_details" target="_blank"> Starred Leads</a><a href="#" class="close_selected_option"><i class="fa fa-times tx-danger"></i></a></div></div></div></form></div>');
+			event.preventDefault();
+		});
+		
+	$(recipent_list_supp).on("click",".close_selected_option", function(e){ //user click on remove text
+			  var remove_form = $('.remove_form')
+				e.preventDefault(); 
+				$(this).find(remove_form).addClass('d-none');  
+				
+			});
+		
+	});
+	
+	$(function (){
+		'use strict'
+		
+		var add_list_supp = $('.add_suppresion_list');
+		$(add_list_supp).click(function(event){
+			$('.append_recipient_list').append('<form class=""><div class="form-group row align-items-center "><div class="col-4 "><select class="custom-select  resulted_select_suppression"><option value="Starred Leads">Starred Leads</option><option value="All Leads">All Leads</option><option value="3D Printing Workshop">3D Printing Workshop</option></select></div><div class="col-8"><div class="d-flex justify-content-between"><a class="resulted_option_suppression" href="<?php echo base_url(); ?>dashboard/list_details" target="_blank"> Starred Leads</a><a href="javascript:void(0)" class="tx-danger suppresion_close tx-22">&times;</a></div></div></div></form>');
+			event.preventDefault();
+		});
+
+	
+		$(add_list_supp).on("click",".suppresion_close", function(e){ //user click on remove text
+			   
+			e.preventDefault(); 
+			$(this).closest('form').remove();  
+				
+		});
+	});
+
+	 $('.tagselectDom').select2({
+			placeholder: 'Add a Tag',
+			 multiple: true,
+			searchInputPlaceholder: 'Search options'
+		});
+		
+	
+	// Step5 Radio Toggle
+	
+	$('.slide_up_step5').click(function(){
+		if($(this).find('input').is(':checked')){
+			$(this).next('div').removeClass('d-none');
+		}
+		
+		else{
+			$(this).next('div').addClass('d-none');
+		}
+	});
+	
+	$('#email_campagin_step5_1').click(function(){
+		$('#step5_date_hide').addClass('d-none');
+	});
+	
+	//Email campaign landing page
+	 $(".checkBoxAll").click(function () {
+        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+    });
+    
+    $(".checkBoxClass").change(function(){
+        if (!$(this).prop("checked")){
+            $(".checkBoxAll").prop("checked",false);
+        }
+    });
+	
+	$('.tooltip_dynamic').tooltip({
+		
+		title:function(){
+			return " " + $(this).text();
+		}
+	});
+	
+	$('.show_hidden_box').click(function(){
+		$('.table_body tr').each(function(){
+			if($(this).hasClass('hidden') && $('.show_hidden_box').is(':checked')){
+				$(this).toggle();
+			}
+			else{
+				$('.table_body tr').remove();
+				$('.table_body').html('<tr><td class="bg-white" colspan="10">No Records Found</td></tr>');
+			
+			}
+		});
+	});
+	
+	
+	
+	
+	//Step3 Criteria modal
+	$(function(){
+			'use strict'
+			$(".dropdown_select_status").change(function(){
+				$(this).find("option:selected").each(function(){
+					var optionValue = $(this).attr("value");
+					if(optionValue){
+						$(".status_col").not("." + optionValue).hide();
+						$("." + optionValue).show();
+					} else{
+						$(".status_col").hide();
+					}
+				});
+			}).change();
+	
+		$('.combine_add').on('click', function(){
+			var concart = $('#combine1').val() + ' ' + $('#combine2').val() + ' ' + $('#year').val() + ' ' +$('#combine3').val()+ ' ' +$('#combine4').val()+ ' '+$('#combine5').val()+ ' '+$('#combine6').val();
+			$('#concart_here').html(concart +'<div class="float-right"><i class="fa fa-pencil tx-primary mg-r-10"></i><i class="fa fa-trash-o tx-danger delete_combine"></i>');
+			$('#concart_before').hide();
+			
+			$('.delete_combine').click(function(){
+				$('#concart_here').hide();
+				$('#concart_before').show();
+			})
+		});
+	});
+	
+	//Landing Page actions
+	$(document).on('click', '#landing_actions_tab li a', function(){
+		$('#landing_actions_tab li a').addClass('bg-light');
+		$(this).removeClass('bg-light');
+	})
+	
+	$('.change_msg_text_2').click(function(){
+		$('.changed_text').text(" on popup after form submission.");
+	});
+	$('.change_msg_text_1').click(function(){
+		$('.changed_text').text(" above the form after form submission.");
+	});
+	
+	$(function(){
+		'use strict'
+		var maxlength = 300;
+		$('.show_here_rem_char').text(maxlength +" "+"characters remaining");
+	
+		$('.show_rem_char').keyup(function(){
+			var text_area = $('.show_rem_char').val().length;
+			var charactersLeft = maxlength - text_area;
+			var count_char = $('.show_here_rem_char');
+			$(count_char).text(charactersLeft +" "+"characters remaining");
+		});
+		
+	});
+	
+	$(function(){
+		'use strict'
+		var maxlength = 300;
+		$('.show_here_rem_char_1').text(maxlength +" "+"characters remaining");
+	
+		$('.show_rem_char_1').keyup(function(){
+			var text_area = $('.show_rem_char_1').val().length;
+			var charactersLeft = maxlength - text_area;
+			var count_char = $('.show_here_rem_char_1');
+			$(count_char).text(charactersLeft +" "+"characters remaining");
+		});
+		
+	});
+	
+	$(function(){
+		'use strict'
+		var maxlength = 300;
+		$('.show_here_rem_char_2').text(maxlength +" "+"characters remaining");
+	
+		$('.show_rem_char_2').keyup(function(){
+			var text_area = $('.show_rem_char_2').val().length;
+			var charactersLeft = maxlength - text_area;
+			var count_char = $('.show_here_rem_char_2');
+			$(count_char).text(charactersLeft +" "+"characters remaining");
+		});
+		
+	});
+	
+	
+	$('.hide_next_elm').click(function(){
+		$(this).parent('div').next('div').toggleClass('d-none');
+	});
+	
+	$(function (){
+		'use strict'
+		function formatData (data) {
+		  if (!data.id) { return data.text; }
+		  var $result= $(
+			'<span><i class="fa fa-folder tx-warning"></i> ' + data.text + '</span>'
+		  );
+		  return $result;
+		};
+
+		$(".selectFont").select2({
+			 dropdownParent: $('.select-modal-parent'),
+		  templateResult: formatData,
+		  templateSelection: formatData
+
+		});
+	});
+		
+	$('.hidden_icons_here').hover(function(){
+			$(this).find('#hidden_icons_fa').toggleClass('select_btn');
+		});
+	$('.remove_tr').click(function(){
+		$(this).closest('.hidden_icons_here').remove();
+	});
+	
+	$('.parselyForm').parsley();
+	$(document).ready(function(){
+		'use strict'
+		$('#upload_content_actions').hide();
+			$('.upload_actions').click(function(event){
+			event.preventDefault();
+			$('#upload_content_actions').slideToggle(1000);
+		
+		});
+		$('.chev_down').click(function(){
+			$(this).find('i').toggleClass('fa-rotate-180');
+		});
+	});
+	
+		
+
+	
+
+//Landing Page
+	$(function(){
+		'use strict'
+		$('.change_attr_tr').on('click', '#landing_page_delete_modal' ,function(){
+			var input_box = $('.checkBoxClass');
+			var input_td = $('.change_attr');
+			var input_tr = $('.change_attr_tr')
+			$(this).find("input").remove();
+		});
+	});
+	//img hover
+	$(function(){
+  		 'use strict'
+  		 $('.img-caption').on('mouseover mouseout', function(){
+   		  $(this).find('figcaption').toggleClass('op-0');
+  	 });
+
+    	});
+	
+	//Landing page settings step4
+	
+	$(function(){
+		'use strict'
+		var maxlength = 70;
+		$('.show_here_rem_char_settings_1').text(maxlength +" "+"characters remaining");
+	
+		$('.show_rem_char_settings_1').keyup(function(){
+			var text_area = $('.show_rem_char_settings_1').val().length;
+			var charactersLeft = maxlength - text_area;
+			var count_char = $('.show_here_rem_char_settings_1');
+			$(count_char).text(charactersLeft +" "+"characters remaining");
+		});
+		
+	});
+	
+	$(function(){
+		'use strict'
+		var maxlength = 156;
+		$('.show_here_rem_char_settings_2').text(maxlength +" "+"characters remaining");
+	
+		$('.show_rem_char_settings_2').keyup(function(){
+			var text_area = $('.show_rem_char_settings_2').val().length;
+			var charactersLeft = maxlength - text_area;
+			var count_char = $('.show_here_rem_char_settings_2');
+			$(count_char).text(charactersLeft +" "+"characters remaining");
+		});
+		
+	});
+	
+	$(function(){
+		'use strict'
+		var maxlength = 156;
+		$('.show_here_rem_char_settings_3').text(maxlength +" "+"characters remaining");
+	
+		$('.show_rem_char_settings_3').keyup(function(){
+			var text_area = $('.show_rem_char_settings_3').val().length;
+			var charactersLeft = maxlength - text_area;
+			var count_char = $('.show_here_rem_char_settings_3');
+			$(count_char).text(charactersLeft +" "+"characters remaining");
+		});
+		
+	});	
+	$(function(){
+		'use strict'
+	$('.drop_child').hover(function(){
+		$(this).find('div').toggleClass('d-none');
+	});
+	});	
+
+
+
+});	
+ $(document).ready(function(){
+	$('.step_1_save').click(function(){
+		var temp_id = $('#template_id').val();
+		var temp_type = $('#template_type').val();
+		var email_camp_name = $('#email_campaign_name').val();
+		$.post('/marketing/emailcampaignfirststep',{[csrftoken]: csrfhash,temp_id:temp_id,email_camp_name:email_camp_name,temp_type:temp_type},function(response){
+			if(response.msg =='success'){
+				$('.error_msg_display').html('');
+				window.location.href = "/marketing/emailCampaign/step2";
+			}else{
+				$('.error_msg_display').html("<div class='alert alert-danger alert-dismissible fade show pd-10' role='alert'>"+response.msg+"<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+			}
+			
+		},'json');
+	});
+ });
+ 
+ function emailcampaignSecondFormSave(formdata){
+	 $.ajax({
+		url: "/marketing/emailcampaignsecondstep",
+		method: "POST",
+		data: formdata,
+		cache: false,
+		contentType: false,
+		processData: false,
+		before: function() {
+
+		},
+		success: function(response) {
+			if(response.msg =='success'){
+				$('.error_msg_display').html('');
+				window.location.href = "/marketing/emailCampaign/step3";
+			}else{
+				$('.error_msg_display').html("<div class='alert alert-danger alert-dismissible fade show pd-10' role='alert'>"+response.msg+"<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+			}
+		}
+	});
+ }
+ function emailcampaignThirdFormSave(formdata){
+	 $.ajax({
+		url: "/marketing/emailcampaignthirdstep",
+		method: "POST",
+		data: formdata,
+		cache: false,
+		contentType: false,
+		processData: false,
+		before: function() {
+
+		},
+		success: function(response) {
+			if(response.msg =='success'){
+				$('.error_msg_display').html('');
+				window.location.href = "/marketing/emailCampaign/step4";
+			}else{
+				$('.error_msg_display').html("<div class='alert alert-danger alert-dismissible fade show pd-10' role='alert'>"+response.msg+"<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+			}
+		}
+	});
+ }
+ function emailcampaignFourthFormSave(formdata){
+	 $.ajax({
+		url: "/marketing/emailcampaignfourthstep",
+		method: "POST",
+		data: formdata,
+		cache: false,
+		contentType: false,
+		processData: false,
+		before: function() {
+
+		},
+		success: function(response) {
+			if(response.msg =='success'){
+				$('.error_msg_display').html('');
+				window.location.href = "/marketing/emailCampaign/step5";
+			}else{
+				$('.error_msg_display').html("<div class='alert alert-danger alert-dismissible fade show pd-10' role='alert'>"+response.msg+"<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+			}
+		}
+	});
+ }

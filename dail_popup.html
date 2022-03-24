@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Sales CRM - Caller Popup</title>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/start/jquery-ui.css"> 
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/schedule_demo.css">
+<link rel="stylesheet" href="css/select2.min.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="css/fullcalendar.min.css" rel="stylesheet">
+<link href="css/quill.snow.css" rel="stylesheet">
+<link href="css/spectrum.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/dashforge.css">
+<link rel="stylesheet" href="css/sales_crm.css">
+<style type="text/css">
+
+#auto_dial {
+    width: 100vw;
+    height: 100vh; 
+   
+    position: relative;
+    overflow:hidden;
+	
+}
+.hover_line:hover
+{
+	text-decoration:underline;
+	color:white;
+}
+
+.call_icon svg {
+	width:16px; 
+	height:16px;
+}
+
+.auto_dial_card_clr
+{
+	background: linear-gradient(180deg, #48CB6F 0%, #87E77A 100%);
+}
+#inbound_container{
+    width:100vw;
+    height:100vh;
+    position:absolute; 
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+</style>
+ 
+	
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+</script>
+
+</head>
+<body>
+<div id="auto_dial">
+    <div id="inbound_container">
+        <div id="autodial_drag" class="dragClass">
+            <div class="card auto_dial_card_clr">
+				<div class="card-body pd-x-20 pd-y-20">
+					<div class="mg-b-15 tx-center">
+						<h6 class="tx-white">Inbound Call</h6>
+						<!-- <img src="images/D.jpg" class="rounded-circle" alt=""> -->
+						<i class="fa fa-user-circle-o tx-white tx-50-f mg-y-10" aria-hidden="true"></i>
+						<div class="wd-250">
+						<a href="#" class="hover_line tx-white tx-22-f tx-semibold">SHUBHAM PRAKASH NAGAWADE</a></div>
+					</div>
+					
+					  <div class="tx-center tx-white">
+						 <div class="call_icon mg-b-5"><i data-feather="phone"></i><span class="pd-l-5 tx-14-f">+91 90909099090 </span></div>
+						 <div class="call_icon"><i data-feather="mail"></i><span class="pd-l-5 tx-14-f">saravana.kumar@skill-lync.com </span></div>
+					  </div>
+					  
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+<script>
+$("#autodial_drag")
+    .draggable({
+        cursor      : "move",
+        scroll      : false,
+        containment : "parent",
+        drag : function(event, ui) {
+            expandParent("#auto_dial", "#autodial_drag");
+        }
+    })
+    
+
+function expandParent(parentName, childName) {
+    var dragEl = $(childName);
+    var parentEl = $(parentName);
+    var dragElHeight=dragEl.height();
+    if(parentEl.height() <= dragElHeight) {
+        parentEl.height(dragElHeight);
+    }
+}
+
+</script>
+</body>
+</html>				
